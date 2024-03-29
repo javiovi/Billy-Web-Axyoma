@@ -1,0 +1,17 @@
+{
+  "name": "billy",
+  "version": "1.0.0",
+  "description": "Billy Web Site",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "author": "Javi Oviedo",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "swiper": "^11.0.7"
+  }
+}

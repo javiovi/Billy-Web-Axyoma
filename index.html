@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://c.webfontfree.com/c.js?f=Averta-Bold" type="text/javascript"></script>
+    <link href="https://db.onlinewebfonts.com/a/SHGt87Zn" rel="stylesheet" type="text/css"/>
+    <link href="https://db.onlinewebfonts.com/c/b5d2107c7c6e775b13169eb51d8970c1?family=AvertaStd-Light" rel="stylesheet" type="text/css"/>
+    <link href="https://db.onlinewebfonts.com/c/efc5d27fcf85239bbfee077b689e3ac9?family=Averta+ExtraBold" rel="stylesheet" type="text/css"/>
+    <link href="https://db.onlinewebfonts.com/c/447315c0c330fd423c8e1cc18024669d?family=AvertaStd-Bold" rel="stylesheet" type="text/css"/>
+    <link href="https://db.onlinewebfonts.com/c/150037e11f159dca84bc4c04549094b6?family=Averta-Regular" rel="stylesheet" type="text/css"/>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+    <link href="./src/output.css" rel="stylesheet">
+
+
+
+    <title>Billy Lomito</title>
+</head>
+<body class="bg-[#020101]">
+    <nav class="bg-black text-white flex items-center justify-between nav-height relative px-4 py-3">
+        <!-- Botón de menú tipo hamburguesa para móviles -->
+        <button class="p-2 hover:border-2 hover:border-f1e4b2 md:hidden z-20">
+            <div class="w-8 h-1 bg-f1e4b2 mb-2"></div>
+            <div class="w-8 h-1 bg-f1e4b2 mb-2"></div>
+            <div class="w-8 h-1 bg-f1e4b2"></div>
+          </button>
+        
+        <!-- Íconos sociales a la izquierda, ocultos en móviles -->
+        <div class="flex items-center space-x-2 md:ml-6">
+          <img src="./src/icons/ins.svg" alt="Instagram" class="h-8 w-8 hidden md:block">
+          <img src="./src/icons/tik.svg" alt="TikTok" class="h-8 w-8 hidden md:block">
+        </div>
+      
+        <!-- Enlaces a la izquierda y derecha del logo, espaciados en escritorio -->
+        <div class="flex-1 flex justify-center items-center mx-10">
+          <a href="#" class="nav-link text-sm hidden md:block mx-5">FRANQUICIAS</a>
+          <a href="#" class="nav-link text-sm hidden md:block mx-5">LOCALES</a>
+      
+          <!-- Logo en el centro -->
+          <img src="/src/img/logonav.svg" alt="BILLY LOMITO" class="h-8 mx-10 logo-nav" style="height: 50px; width: auto;">
+          
+          <a href="#" class="nav-link text-sm hidden md:block mx-5">CONTACTO</a>
+          <a href="#" class="nav-link text-sm hidden md:block mx-5">HACÉ TU PEDIDO</a>
+        </div>
+        
+        <!-- Ícono del carrito a la derecha -->
+        <div class="relative  md:mr-6">
+          <img src="/src/icons/caricon.svg" alt="Carrito" class="h-12 w-12">
+          <span id="cart-count" class=" text-xs caricon bg-transparent px-2 py-1 absolute top-6 right-8 transform translate-x-1/2 -translate-y-1/2">
+            (0)
+          </span>
+        </div>
+      </nav>
+        
+       
+     <!-- Swiper -->
+<div class="swiper-container overflow-x-hidden">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img src="./src/img/banner1.png" class="hidden md:block w-full h-full object-cover">
+        <img src="./src/img/banner1mobile.png" class="md:hidden w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./src/img/banner2.png" class="hidden md:block w-full h-full object-cover">
+        <img src="/src/img/banner1mobile.png" class="w-full h-full object-cover md:hidden">
+        <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./src/img/banner1.png" class="hidden md:block w-full h-full object-cover">
+        <img src="./src/img/banner1mobile.png" class="w-full h-full object-cover md:hidden">
+        <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
+      </div>
+      <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
+      
+       </div>
+       <div class="swiper-pagination absolute bottom-0 md:bottom-16 w-full flex justify-center"></div>
+
+
+  
+<div class="bg-[#020101] text-white px-4 py-8 lg:py-16 md:mt-24">
+
+  <div class="grid md:grid-cols-2 gap-60 container-postbanner ">
+    
+  
+    <div class="hidden md:block mt-12 left-section">
+      <div class="flex items-center">
+        <h3 class="text-lg md:text-xl lg:text-xl font-semibold custom-phrase-class mr-4 ml-16">PEDITE EL LOMO AMERICANO</h3>
+        <a href="#" class="inline-block link-phrase-class">+ Conocé más detalles</a>
+      </div>
+      <img src="/src/img/lomoamericano.png" alt="Lomo Americano" class="w-full h-auto rounded-lg shadow-md mt-24">
+    </div>
+    
+   
+    <div class="mt-0 sm:mt40">
+      
+      <h2 class="text-xl md:text-2xl lg:text-xl font-bold mb-2 title-ofertas ml-12 mt-0">ESTÁS SON LAS OFERTAS PARA VOS</h2>
+      <p class="mb-1 subtitle-ofertas ml-12">Cada semana explorá un sinfín de sabores nuevos en nuestras<br>hamburguesas y lomos.</p>
+        <div id="products-container">
+        <!-- Dynamic product entries will be inserted here by JavaScript -->
+      </div>
+
+    </div>
+    
+  </div>
+</div>
+<!-- Título y Subtítulo -->
+<div class="text-center my-8">
+  <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold title-carrito mb-3">CONOCÉ LA FAMILIA <span class="billy">BILLY</span></h1>
+  <p class="text-lg sm:text-xl mt-2 subtitle-carrito mb-10">Si querés calidad sin vueltas y sabor con personalidad, es por acá.</p>
+</div>
+
+<!-- Botones de navegación para los productos -->
+<div class="flex justify-center space-x-4 my-8">
+  <button id="combos-billy" class="tab-principal py-2 px-4 ">COMBOS BILLY</button>
+  <button id="individuales" class="tab-principal py-2 px-4">INDIVIDUALES</button>
+</div>
+
+<div class="grid grid-cols-2 gap-4 bg-black py-2 sm:flex sm:space-x-4 sm:justify-center">
+  <button id="sandwiches" class="tab-button relative py-2 px-4 text-custom hover:text-customHoverColor">SANDWICHES</button>
+  <button id="papas-fritas" class="tab-button relative py-2 px-4 text-custom  hover:text-customHoverColor">PAPAS FRITAS</button>
+  <button id="gaseosas" class="tab-button relative py-2 px-4 text-custom hover:text-customHoverColor">GASEOSAS</button>
+  <button id="varios" class="tab-button relative py-2 px-4 text-custom  hover:text-customHoverColor">VARIOS</button>
+</div>
+
+
+<!-- Contenedor para los productos -->
+<div id="additional-products-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:px-20 px-0">
+  <!-- Los productos se cargarán aquí dinámicamente -->
+</div>
+<button id="load-more-button" class="mx-auto text-white bg-black px-4 py-2 my-4">
+  + VER MÁS PRODUCTOS
+</button>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+          // Optional parameters
+          direction: 'horizontal',
+          loop: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+      
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+      
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+      
+          // And if we need scrollbar
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        });
+      </script>
+      
+      <script src="/cart.js"></script> 
+
+     
+</body>
+</html>

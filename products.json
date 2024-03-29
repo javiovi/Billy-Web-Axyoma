@@ -1,0 +1,109 @@
+[
+    {
+      "id": 1,
+      "name": "PACK LOMO SUPER",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y mayonesa en pan francés.",
+      "price": 6800,
+      "previousPrice": 7400,
+      "imageUrl": "/src/img/lomo-super.png",
+      "section": "destacados"
+    },
+    {
+      "id": 2,
+      "name": "PACK HAMBURGUESA EXT SUPER",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl": "/src/img/hamb-extra.png",
+      "section": "destacados"
+    },
+
+    {
+      "id": 3,
+      "name": "LOMO AMERICANO",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl": "/src/img/lomoame.png",
+      "section": "generales"
+    },
+
+    {
+      "id": 4,
+      "name": "LOMO SUPER",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl": "/src/img/lomoame.png",
+      "section": "generales"
+    },
+    {
+      "id": 5,
+      "name": "LOMO CLASICO",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl": "/src/img/lomoame.png",
+      "section": "generales"
+    },
+
+    {
+      "id": 6,
+      "name": "EXTREMA CLASICO",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl":"/src/img/lomoame.png",
+      "section": "generales"
+    },
+ 
+    {
+      "id": 7,
+      "name": "EXTREMA SUPER",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl":"/src/img/lomoame.png",
+      "section": "generales"
+    },
+
+    {
+      "id": 8,
+      "name": "POLLO CLASICO",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl": "/src/img/lomoame.png",
+      "section": "generales"
+    },
+    {
+      "id": 9,
+      "name": "POLLO SUPER",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl": "/src/img/lomoame.png",
+      "section": "generales"
+    },
+    {
+      "id": 10,
+      "name": "MOLLEJA CLASICA",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl": "/src/img/lomoame.png",
+      "section": "generales"
+    },
+    {
+      "id": 11,
+      "name": "MOLLEJA SUPER",
+      "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
+      "price": 6300,
+      "previousPrice": 7100,
+      "imageUrl": "/src/img/lomoame.png",
+      "section": "generales"
+    }
+
+
+  ]
+  
