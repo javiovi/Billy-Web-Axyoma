@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     products.forEach((product) => {
      const productName = product.name
       const productHtml = `
-      <div class="flex flex-col bg-black p-4 rounded-lg overflow-hidden mb-4 sm:mb-6 w-full">
+      <div class="flex flex-col bg-black p-4 rounded-lg overflow-hidden mb-4 sm:mb-6 w-full product" data-id="${product.id}">
       <img src="${product.imageUrl}" alt="${productName}" class="w-full h-auto object-cover mb-4"> 
       <div class="text-left ">
         <h3 class="text-lg font-semibold mb-2 product-n1">${productName}</h3>
@@ -73,14 +73,26 @@ document.addEventListener('DOMContentLoaded', () => {
       // Usa insertAdjacentHTML en lugar de innerHTML +=
       container.insertAdjacentHTML('beforeend', productHtml);
     });
+
+    if (window.innerWidth < 640) {
+      const hiddenProducts = document.querySelectorAll('#additional-products-container .product[data-id]');
+      hiddenProducts.forEach(product => {
+        const productId = parseInt(product.dataset.id);
+        if (productId > 5) {
+          product.classList.add('hidden');
+        }
+      });
+    }
   
-    // Ahora inicializa los botones después de agregarlos
+    // Inicializa los botones después de agregarlos
     initializeAddToCartButtons();
   }
+  
+  
 
 
 function initializeAddToCartButtons() {
-  // Asegúrate de que esta función se llama después de agregar los productos
+ 
   document.querySelectorAll('.agregar-btn').forEach(button => {
     button.addEventListener('click', addToCart);
   });
@@ -99,8 +111,6 @@ function updateCartCount() {
   const cartCount = localStorage.getItem('cartCount') || 0;
   document.getElementById('cart-count').textContent = `(${cartCount})`;
 }
- 
-
 
 // Boton seleccionado en carrito 
 
@@ -112,38 +122,47 @@ document.querySelectorAll('.tab-principal').forEach(button => {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  const allProducts = document.querySelectorAll('#additional-products-container .flex');
-  const loadMoreButton = document.getElementById('load-more-button');
+function toggleVisibilityOfProducts() {
+  const hiddenProducts = document.querySelectorAll('#additional-products-container .product[data-id]');
+  // Toggle visibilidad de los productos con id > 5
+  hiddenProducts.forEach(product => {
+    const productId = parseInt(product.dataset.id);
+    if (productId > 5) {
+      product.classList.toggle('hidden');
+    }
+  });
+}
 
-  // Asumiendo que quieres mostrar solo 3 productos en móvil.
-  const maxProductsToShowOnMobile = 3;
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('toggle-products-button');
 
-  // Función para actualizar la visualización de productos
-  function updateProductDisplay() {
-    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    
-    // Mostrar solo los primeros 3 productos en móvil
-    allProducts.forEach((product, index) => {
-      if (width < 768 && index >= maxProductsToShowOnMobile) { // 768px es un punto de quiebre común para móviles
-        product.style.display = 'none';
-      } else {
-        product.style.display = 'flex'; // o tu clase display por defecto
-      }
-    });
+  // Inicialmente oculta los productos con id > 5 solo si es mobile
+  if (window.innerWidth < 640) {
+    toggleVisibilityOfProducts(); // Llamar la función al cargar la página
   }
 
-  // Ejecutar al cargar la página
-  updateProductDisplay();
+  // Escuchar clicks en el botón de "VER MÁS PRODUCTOS"
+  toggleButton.addEventListener('click', function() {
+    toggleVisibilityOfProducts(); // Llamar la función en el click
 
-  // Escuchar al botón para cargar más productos
-  loadMoreButton.addEventListener('click', function() {
-    allProducts.forEach(product => {
-      product.style.display = 'flex'; // o tu clase display por defecto
-    });
-    loadMoreButton.style.display = 'none'; // Ocultar el botón después de mostrar todos los productos
+    // Cambia el texto del botón
+    if (this.textContent.includes('VER MÁS')) {
+      this.textContent = '- VER MENOS PRODUCTOS';
+    } else {
+      this.textContent = '+ VER MÁS PRODUCTOS';
+    }
   });
 
-  // Escuchar el redimensionamiento de la ventana para ajustar la visualización de productos
-  window.addEventListener('resize', updateProductDisplay);
+  // Evento para manejar cambios de tamaño de pantalla
+  window.addEventListener('resize', function() {
+    // Verifica si la pantalla es desktop y si hay productos ocultos
+    if (window.innerWidth >= 640) {
+      const hiddenProducts = document.querySelectorAll('#additional-products-container .product[data-id].hidden');
+      // Si hay productos ocultos y es pantalla grande, los muestra
+      if (hiddenProducts.length > 0) {
+        toggleVisibilityOfProducts();
+        toggleButton.textContent = '+ VER MÁS PRODUCTOS'; // Restablecer el texto del botón
+      }
+    }
+  });
 });

@@ -133,12 +133,13 @@
 <div id="additional-products-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:px-20 px-0">
   <!-- Los productos se cargarán aquí dinámicamente -->
 </div>
-<button id="load-more-button" class="mx-auto text-white bg-black px-4 py-2 my-4">
+<button id="toggle-products-button" class="mx-auto text-white bg-yellow-500 px-4 py-2 my-4 block sm:hidden">
   + VER MÁS PRODUCTOS
 </button>
 
 
 
+  
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
@@ -168,8 +169,11 @@
           },
         });
       </script>
-      
+
+
+ 
       <script src="/cart.js"></script> 
+
 
      
 </body>
