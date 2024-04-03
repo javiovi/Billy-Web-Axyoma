@@ -133,17 +133,56 @@
 <div id="additional-products-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:px-20 px-0">
   <!-- Los productos se cargarán aquí dinámicamente -->
 </div>
-<button id="toggle-products-button" class="mx-auto text-white bg-yellow-500 px-4 py-2 my-4 block sm:hidden">
+<button id="toggle-products-button" class="btn-moreproducts mx-auto text-white bg-yellow-500 px-4 py-2 my-4 block sm:hidden">
   + VER MÁS PRODUCTOS
 </button>
 
+
+<!-- BANNNER LOCALES-->
+
+<div class="locales-section bg-cover" style="background-image: url('/src/img/bannerlocales.png');">
+  <!-- Content Left -->
+  <div class="locales-info ml-24">
+    <h2 class="conoce-title mb-1">Conocé</h2>
+    <h2 class="locales-title mb-4">LOS LOCALES</h2>
+    <p class="locales-subtitle mb-6">No busques más, te dejamos donde<br> encontrar los mejores lomitos de Rosario.</p>
+   
+   
+    <div class="locales-list">
+      <div class="locale mb-6 mt-6" data-info="info1">
+        <img src="/src/icons/location.svg" class="w-7 h-7">
+        <span>Laprida 796, Rosario.</span>
+      </div>
+      <div class="locale mb-6 mt-6" data-info="info2">
+        <img src="/src/icons/location.svg" class="w-7 h-7">
+        <span>Laprida 796, Rosario.</span>
+        </div>
+      <div class="locale mb-6 mt-6" data-info="info3">
+        <img src="/src/icons/location.svg" class="w-7 h-7">
+        <span>Laprida 796, Rosario.</span>
+    </div>
+    </div>
+
+
+    <div class="locales-details">
+      <div id="info1" class="details hidden"><span class="h-bold">Horarios</span><br>Lunes a Viernes...</div>
+      <div id="info2" class="details hidden">Horarios: Lunes a Viernes...</div>
+      <div id="info3" class="details hidden">Horarios: Lunes a Viernes...</div>
+    </div>
+  </div>
+  <!-- Content Right -->
+  <div class="locales-image">
+    <img src="/src/img/h-der.svg" alt="Imagen de hamburguesa" class="max-w-sm rounded-lg shadow-md">
+  </div>
+</div>
 
 
   
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+      //Swipper banners principales
         var swiper = new Swiper('.swiper-container', {
-          // Optional parameters
+         
           direction: 'horizontal',
           loop: true,
           autoplay: {
@@ -151,23 +190,44 @@
             disableOnInteraction: false,
           },
       
-          // If we need pagination
+         
           pagination: {
             el: '.swiper-pagination',
             clickable: true,
           },
       
-          // Navigation arrows
+          
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           },
       
-          // And if we need scrollbar
+        
           scrollbar: {
             el: '.swiper-scrollbar',
           },
         });
+
+        //Seccion Locales
+        document.querySelectorAll('.locale').forEach(locale => {
+  locale.addEventListener('click', function() {
+    const targetId = this.dataset.info;
+    const details = document.querySelector('.locales-details').children;
+
+    // Hide all details
+    for (let detail of details) {
+      detail.classList.remove('active');
+    }
+
+    // Show the clicked locale's details
+    const targetDetails = document.getElementById(targetId);
+    targetDetails.classList.add('active');
+  });
+});
+
+
+
+    
       </script>
 
 

@@ -336,6 +336,105 @@ line-height: normal;
   border-color: #EEE0B3; /* Tu color de borde al hacer hover */
 }
 
+.btn-moreproducts{
+background-color: transparent;
+color: #EEE0B3;
+font-family: "AvertaStd-Light";
+
+}
+.locales-title{
+  color: #EEE0B3;
+
+  font-family: "AvertaStd-Bold";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+
+}
+.conoce-title {
+  color: #EEE0B3;
+
+  font-family: "AvertaStd-Bold";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.locales-subtitle {
+  color: #EEE0B3;
+
+font-family: "AvertaStd-Light";
+font-size: 16px;
+font-style: normal;
+font-weight: lighter;
+line-height: normal;
+}
+
+.local {
+  color: #EEE0B3;
+font-family: "AvertaStd-Light";
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 35px;
+}
+
+.locale {
+  color: #EEE0B3;
+
+font-family:"AvertaStd-Light";
+font-size: 18px;
+font-style: normal;
+font-weight: lighter;
+line-height: normal;
+
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+ 
+}
+
+
+.local {
+  cursor: pointer;
+  /* Otros estilos */
+}
+.l1{
+
+}
+.local:hover, .local.active {
+  /* Estilos para hover y activo */
+}
+.details {
+  display: none;
+  color: #EEE0B3;
+font-family: AvertaStd-Bold;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 35px; /* 159.091% */
+}
+
+.details.active {
+  display: block; /* Show the details */
+}
+.locales-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.locales-info {
+  max-width: 600px;
+}
+
+.locales-image {
+  display: none; /* Hide on mobile */
+}
+
 
 
   @media (min-width: 768px) {
@@ -353,6 +452,19 @@ line-height: normal;
       z-index: 10;
     }
   
+    .locales-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  
+    .locales-image {
+      display: block;
+    }
+  
+    .locales-details .details {
+      /* Add positioning styles here */
+    }
   }
 
   @media (max-width: 768px){
@@ -387,6 +499,8 @@ line-height: normal;
    
     margin-right: 25px;
   }
+
+  
   }
 
   @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) { 
