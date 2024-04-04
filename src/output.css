@@ -590,6 +590,10 @@ video {
   visibility: collapse;
 }
 
+.static {
+  position: static;
+}
+
 .absolute {
   position: absolute;
 }
@@ -791,8 +795,20 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mb-14 {
+  margin-bottom: 3.5rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.mb-24 {
+  margin-bottom: 6rem;
 }
 
 .mb-3 {
@@ -1142,6 +1158,14 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.content-end {
+  align-content: flex-end;
 }
 
 .items-start {
@@ -1675,7 +1699,6 @@ video {
   top: 50%;
   right: 0;
   border-top: 2px solid #E8AB35;
-  /* Ajusta el color a lo que prefieras */
   transform: translateY(-50%);
 }
 
@@ -1766,13 +1789,11 @@ video {
 .tab-button::before, .tab-button::after {
   content: '';
   width: 50%;
-  /* Cambia a 50% para que empiecen desde los bordes */
   height: 2px;
   position: absolute;
   bottom: -2px;
   transition: width 0.3s;
   background-color: #EEE0B3;
-  /* El color de las líneas laterales */
 }
 
 .tab-button::before {
@@ -1813,7 +1834,6 @@ video {
   height: 40px;
   border-radius: 2px;
   background-color: #151515;
-  /* Tu color de fondo al hacer hover */
   color: #E8AB35;
   border-bottom-color: #EEE0B3;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
@@ -1826,13 +1846,27 @@ video {
 
 .tab-principal:not(.active):hover {
   border-color: #EEE0B3;
-  /* Tu color de borde al hacer hover */
 }
 
 .btn-moreproducts{
   background-color: transparent;
   color: #EEE0B3;
   font-family: "AvertaStd-Light";
+}
+
+/* seccion locales */
+
+.locales-section {
+  background-image: url('/src/img/bannerlocales.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5% 5%;
+  margin-top: 50px;
 }
 
 .locales-title{
@@ -1872,6 +1906,7 @@ video {
 }
 
 .locale {
+  position: relative;
   color: #EEE0B3;
   font-family:"AvertaStd-Light";
   font-size: 18px;
@@ -1881,58 +1916,179 @@ video {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.local {
   cursor: pointer;
-  /* Otros estilos */
+  padding-bottom: 5px;
+  width: 100%;
 }
 
-.l1{
+.locale-wrapper{
+  position: relative;
 }
 
-.local:hover, .local.active {
-  /* Estilos para hover y activo */
+.locale::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -25px;
+  height: 1px;
+  width: 100%;
+  background-color: #EEE0B3;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.locale:hover::after, .locale:focus-within::after {
+  height: 2px;
+}
+
+.locales-info-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding-right: 20px;
+}
+
+.locales-info-wrapper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: calc(32%);
+  top: 52.5%;
+  bottom: 0;
+  width: 2px;
+  height: 42%;
+  background-color: #F1E4B2;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.locale-wrapper:hover ~ .locales-info-wrapper::after {
+  opacity: 1;
+}
+
+.locales-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
 }
 
 .details {
-  display: none;
+  position: absolute;
+  top: -30px;
+  left: 100%;
+  width: 370px;
+  background-color:transparent;
+  z-index: 100;
+  padding: 1em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   color: #EEE0B3;
-  font-family: AvertaStd-Bold;
-  font-size: 22px;
+  font-family: "AvertaStd-Light";
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 35px;
-  /* 159.091% */
+  display: none;
+  padding-left: 30px;
+}
+
+.h-bold {
+  color: #EEE0B3;
+  font-family: "AvertaStd-Bold";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 35px;
 }
 
 .details.active {
   display: block;
-  /* Show the details */
 }
 
-.locales-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-.locales-info {
-  max-width: 600px;
+.locale:hover .details, .locale.active .details {
+  display: block;
 }
 
 .locales-image {
-  display: none;
-  /* Hide on mobile */
+  flex: 0 0 auto;
+  align-self: center;
+  margin-left: auto;
+  padding-top: 10%;
+}
+
+.locales-image img {
+  max-width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.locale-wrapper:hover .details {
+  display: block;
+  /* Mostrar detalles al hacer hover */
+}
+
+@media screen and (min-width: 1024px) {
+  /* For desktop */
+
+  .locales-container {
+    flex-direction: row;
+  }
+
+  .locale-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .locales-image {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  /* For mobile */
+
+  .locales-section {
+    flex-direction: column;
+  }
+
+  .locales-info-wrapper {
+    flex-direction: column;
+  }
+
+  .locales-image {
+    display: none;
+  }
+
+  .details.active {
+    display: block;
+  }
+
+  .locale + .details {
+    padding-left: 0;
+  }
+
+  .details {
+    position: static;
+    width: auto;
+    display: none;
+    margin-top: 40px;
+  }
+
+  .locale-wrapper {
+    display: block;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
   .social-icons {
     margin-left: 2.5rem;
     gap: 0.5rem;
-    /* O ajusta según sea necesario */
   }
 
   .nav-link {
@@ -1946,18 +2102,11 @@ video {
     z-index: 10;
   }
 
-  .locales-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
   .locales-image {
     display: block;
   }
 
   .locales-details .details {
-    /* Add positioning styles here */
   }
 }
 
@@ -1993,6 +2142,16 @@ video {
 
   .agregar-btn1{
     margin-right: 25px;
+  }
+
+  .locales-info{
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .locales-info-wrapper::after 
+ {
+    display: none;
   }
 }
 
@@ -2038,6 +2197,17 @@ video {
   .agregar-btn1{
     width: 160px;
     font-size: 14px;
+  }
+
+  .locales-info-wrapper::after{
+    left: 40%;
+  }
+}
+
+@media (max-width: 900px)
+  {
+  .locales-image{
+    display: none;
   }
 }
 

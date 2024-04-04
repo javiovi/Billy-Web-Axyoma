@@ -140,41 +140,58 @@
 
 <!-- BANNNER LOCALES-->
 
-<div class="locales-section bg-cover" style="background-image: url('/src/img/bannerlocales.png');">
-  <!-- Content Left -->
-  <div class="locales-info ml-24">
-    <h2 class="conoce-title mb-1">Conocé</h2>
-    <h2 class="locales-title mb-4">LOS LOCALES</h2>
-    <p class="locales-subtitle mb-6">No busques más, te dejamos donde<br> encontrar los mejores lomitos de Rosario.</p>
-   
-   
-    <div class="locales-list">
-      <div class="locale mb-6 mt-6" data-info="info1">
-        <img src="/src/icons/location.svg" class="w-7 h-7">
-        <span>Laprida 796, Rosario.</span>
-      </div>
-      <div class="locale mb-6 mt-6" data-info="info2">
-        <img src="/src/icons/location.svg" class="w-7 h-7">
-        <span>Laprida 796, Rosario.</span>
+<div class="locales-section">
+  <div class="locales-info-wrapper">
+  <div class="locales-info mt-24 ml-32">
+      <h2 class="conoce-title mb-1">Conocé</h2>
+      <h2 class="locales-title mb-4">LOS LOCALES</h2>
+      <p class="locales-subtitle mb-16">No busques más, te dejamos donde<br>encontrar los mejores lomitos de Rosario.</p>
+
+        <!-- Locales Details -->
+        <div class="locales-details-wrapper">
+          <!-- First Locale -->
+          <div class="locale-wrapper mb-14" data-info="info1">
+            <div class="locale">
+              <img src="/src/icons/location.svg" class="w-7 h-7">
+              <span>Laprida 796, Rosario.</span>
+            </div>
+            <div id="info1" class="details hidden">
+              <span class="h-bold">Horarios:</span><br> Lunes a Viernes 9hs - 12hs / 15hs - 19hs Sábado 8hs a 12:30hs.<br> Domingo Cerrado.
+            </div>
+            
+          </div>
+          
+          <!-- Second Locale -->
+          <div class="locale-wrapper mb-14" data-info="info2">
+            <div class="locale">
+              <img src="/src/icons/location.svg" class="w-7 h-7">
+              <span>Junín 501, Rosario.</span>
+            </div>
+            <div id="info2" class="details hidden">
+              <span class="h-bold">Horarios:</span><br> Lunes a Viernes 10hs - 13hs / 16hs - 20hs Sábado 9hs a 13:30hs.<br> Domingo Cerrado.
+            </div>
+          </div>
+          
+          <!-- Third Locale -->
+          <div class="locale-wrapper mb-14" data-info="info3">
+            <div class="locale">
+              <img src="/src/icons/location.svg" class="w-7 h-7">
+              <span>Córdoba 1641, Rosario.</span>
+            </div>
+            <div id="info3" class="details hidden">
+              <span class="h-bold">Horarios:</span><br> Lunes a Viernes 8hs - 11hs / 17hs - 21hs Sábado 10hs a 14:30hs.<br> Domingo Cerrado.
+            </div>
+          </div>
         </div>
-      <div class="locale mb-6 mt-6" data-info="info3">
-        <img src="/src/icons/location.svg" class="w-7 h-7">
-        <span>Laprida 796, Rosario.</span>
+      </div>
+    
+    <!-- Content Right - Image of the hamburger -->
+    <div class="locales-image ">
+      <img src="/src/img/h-der.svg" alt="Imagen de hamburguesa" class="max-w-sm rounded-lg shadow-md">
     </div>
-    </div>
-
-
-    <div class="locales-details">
-      <div id="info1" class="details hidden"><span class="h-bold">Horarios</span><br>Lunes a Viernes...</div>
-      <div id="info2" class="details hidden">Horarios: Lunes a Viernes...</div>
-      <div id="info3" class="details hidden">Horarios: Lunes a Viernes...</div>
-    </div>
-  </div>
-  <!-- Content Right -->
-  <div class="locales-image">
-    <img src="/src/img/h-der.svg" alt="Imagen de hamburguesa" class="max-w-sm rounded-lg shadow-md">
-  </div>
+ 
 </div>
+
 
 
   
@@ -208,28 +225,64 @@
           },
         });
 
-        //Seccion Locales
-        document.querySelectorAll('.locale').forEach(locale => {
-  locale.addEventListener('click', function() {
-    const targetId = this.dataset.info;
-    const details = document.querySelector('.locales-details').children;
 
-    // Hide all details
-    for (let detail of details) {
-      detail.classList.remove('active');
-    }
 
-    // Show the clicked locale's details
-    const targetDetails = document.getElementById(targetId);
-    targetDetails.classList.add('active');
-  });
+  </script>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  initializeLocaleEvents();
 });
 
+const toggleDetailsDisplay = (detailsId) => {
+  const details = document.getElementById(detailsId);
+  if (details) {
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+  } else {
+    console.error('No details element found for id', detailsId);
+  }
+};
+const isTouchDevice = () => {
+  return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+};
+
+// Function to hide all details
+const hideAllDetails = () => {
+  document.querySelectorAll('.details').forEach(detail => {
+    detail.style.display = 'none'; // hide detail
+  });
+};
 
 
+const initializeLocaleEvents = () => {
+  // Esconde los detalles inmediatamente en móviles
+  if (isTouchDevice() || window.innerWidth < 1024) {
+    hideAllDetails();
+  }
+
+  document.querySelectorAll('.locale-wrapper').forEach(wrapper => {
+    const locale = wrapper.querySelector('.locale');
+    const details = wrapper.querySelector('.details');
     
-      </script>
+    locale.addEventListener('click', () => {
+      // En dispositivos móviles, se debe hacer toggle en los detalles
+      if (isTouchDevice() || window.innerWidth < 1024) {
+        const isDetailsVisible = details.style.display === 'block';
+        hideAllDetails(); // Esconde todos los detalles
+        details.style.display = isDetailsVisible ? 'none' : 'block'; // Muestra los que corresponden
+      }
+    });
+  });
+};
 
+
+// Call the initialization function when the script loads
+initializeLocaleEvents();
+
+// Add event listeners to re-initialize on window resize if necessary
+window.addEventListener('resize', initializeLocaleEvents);
+
+
+</script>
 
  
       <script src="/cart.js"></script> 
