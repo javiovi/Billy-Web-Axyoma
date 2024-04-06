@@ -4,6 +4,13 @@
 
 
 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegúrate que la barra de navegación esté sobre otros elementos */
+}
 .nav-height {
     height: 100px; /* Esta es la altura específica que puedes controlar */
   }
@@ -17,15 +24,50 @@
     font-weight: 400;
     line-height: normal;
   }
+
+  #mobile-menu {
+    background-color: rgba(0, 0, 0, 0.90);
+  }
+
   .nav-link:hover {
     color: #F1E4B2;
 
-    font-family: "Averta ExtraBold";
+   font-family: "Averta ExtraBold";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
+  
+  #mobile-menu .nav-link {
+    display: block; 
+    color: #F1E4B2;
+    text-decoration: none;
+    font-family: "AvertaStd-Light";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    gap: 20px;
+  
+  }
+
+  #mobile-menu .nav-link:hover{
+    color: #F1E4B2;
+
+    font-family: "Averta ExtraBold";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+  }
+ 
+  #mobile-menu .social-icons a {
+    display: inline-block; /* Muestra los íconos de redes sociales en línea */
+    margin: 0 10px; /* Espacio horizontal entre íconos */
+    /* Agrega más estilos según sea necesario */
+  }
+ 
    
   .caricon{
     color: #020101;
@@ -48,22 +90,23 @@ line-height: normal;
 
   .swiper-pagination-bullet {
     Width:188px;
-    Height: 5px; /* Altura del bullet */
-    background:#181818; /* Color de fondo por defecto */
-    opacity: 1; /* Los bullets no serán transparentes */
+    Height: 5px; 
+    background:#181818; 
+    opacity: 1; 
     border-radius: 0;
+  
 
     
   }
   .swiper-pagination-bullet-active {
-    background: #EEE0B3 /* Color de fondo del bullet activo */
+    background: #EEE0B3 
   }
 
 
 
   .custom-phrase-class {
     font-family: "AvertaStd-Bold";
-    color:#EEE0B3; /* Ejemplo: texto blanco */
+    color:#EEE0B3; 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
     font-size: 30px;
 font-style: normal;
@@ -133,7 +176,7 @@ line-height: normal;
 }
 
 .product-description {
-  color: #EEE0B3;
+  color: #EE0B3;
 
 font-family: "AvertaStd-Light";
 font-size: 14px;
@@ -172,7 +215,7 @@ margin-left: 10px;}
 }
 
 
-.agregar-btn1 {
+.agregar-boton {
   border-radius: 2px;
 background: #EEE0B3;
 color: #020101;
@@ -186,7 +229,7 @@ width: 180px;
 height: 38px;
 flex-shrink: 0;
 }
-.agregar-btn1:hover {
+.agregar-boton:hover {
   background: #D1C1A1; 
   cursor: pointer; 
 }
@@ -512,7 +555,197 @@ line-height: 35px;
 
 }
 .locale-wrapper:hover .details {
-  display: block; /* Mostrar detalles al hacer hover */
+  display: block;
+}
+/* Franquicias */
+.gradient-divider {
+   margin-top: -100px;
+  height: 100px; 
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+}
+
+
+.franquicias-derecha {
+  padding-top: 110px;
+  margin-left: 50px;
+}
+
+
+.franquicias-titulo {
+  color: #EEE0B3;
+font-family: "AvertaStd-Bold";
+font-size: 45px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+.franquicias-texto {
+  color: #EEE0B3;
+font-family: 'AvertaStd-Light';
+font-size: 16px;
+font-style: normal;
+font-weight: lighter;
+line-height: normal;
+}
+.btn-franquicias{
+  font-family:  'AvertaStd-Light';
+  font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  background-color: transparent;
+  
+  border: 1px solid #EEE0B3;
+  width: 350px;
+  height: 46px;
+  padding: 5px 5px ;
+  color: #EEE0B3;
+  border-radius: 3px;
+}
+
+
+.btn-franquicias:hover {
+  background: #D1C1A1; 
+  color: black; 
+  cursor: pointer; 
+}
+.btn-conoce{
+  font-family:  'AvertaStd-Bold';
+  font-size: 16px;
+font-style: normal;
+font-weight: bold;
+line-height: normal;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 1px solid #EEE0B3; 
+  color: #EEE0B3;
+}
+
+.btn-conoce:hover{
+background: #D1C1A1; 
+color: black; 
+cursor: pointer; 
+}
+
+.franquicias-titulo-inf {
+  color: #EEE0B3;
+font-family: "AvertaStd-Bold";
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+.franquicias-texto-inf {
+  color: #EEE0B3;
+font-family: 'AvertaStd-Light';
+font-size: 16px;
+font-style: normal;
+font-weight: lighter;
+line-height: normal;
+}
+.titulo-color{
+  color: #E8AB35;
+}
+
+/* FORM */
+
+.form-input, .form-textarea {
+  border: 2px solid #000;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+  color: #000;
+  opacity: 0.6;
+}
+
+.trabaja-titulo {
+  font-family: "AvertaStd-Bold";
+font-size: 45px;
+font-weight: bold;
+line-height: 50px;
+color: #080808;
+
+}
+.btn-cv {
+font-family: "AvertaStd-Bold";
+font-weight: 400;
+color: #EEE0B3;
+border-radius: 2px;
+background: #383838;
+height: 40px;
+font-size: 16px;
+}
+.btn-cv:hover{
+  background: #D1C1A1; 
+color: black; 
+cursor: pointer;
+
+}
+
+.btn-enviar {
+border-radius: 2px;
+background: #080808;
+color: #E8AB35;
+font-family: "AvertaStd-Bold";
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+height: 40px;
+font-size: 16px;
+}
+.btn-enviar:hover {
+  background: #D1C1A1; 
+  color: black; 
+  cursor: pointer;  
+}
+
+input, textarea {
+  font-family: "AvertaStd-Light"; 
+  color: #000008; 
+  outline: none; 
+  font-style: normal;
+font-weight: 600;
+}
+
+
+::placeholder {
+  color: #000000; 
+  opacity: 1; 
+}
+
+
+input:focus, textarea:focus {
+  border-color: #E8AB35; 
+  outline: none;
+}
+
+
+.btn-cv {
+  position: relative; 
+  overflow: hidden; 
+}
+
+.btn-cv input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; 
+  cursor: pointer; 
+}
+
+.p-footer{
+ color: #FFF;
+font-family: "AvertaStd-Light";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }
 @media screen and (min-width: 1024px) { /* For desktop */
   .locales-container {
@@ -527,6 +760,9 @@ line-height: 35px;
   .locales-image {
     display: block;
     margin-left: auto; 
+  }
+  .f-menu{
+    display: none;
   }
 }
 @media screen and (max-width: 1023px) { /* For mobile */
@@ -609,6 +845,10 @@ line-height: 35px;
     margin-left: 50px;
     margin-right: 50px;
   }
+  .title-ofertas{
+    font-size: 26px;
+    margin-top: 20px;
+  }
 
   .product-previous-price{
     margin-left: -20px;
@@ -617,7 +857,7 @@ line-height: 35px;
     margin-left: 70px;
     margin-right: 50px;
   }
-  .agregar-btn1{
+  .agregar-boton{
    
     margin-right: 25px;
   }
@@ -630,6 +870,38 @@ line-height: 35px;
  {
   display: none;
  }
+
+.franquicias-derecha {
+  padding-top: 10px;
+  margin-left: 0px;
+}
+.franquicias-titulo{
+ text-align: center;
+}
+.franquicias-texto{
+  text-align: center;
+}
+.btn-franquicias{
+  
+  margin-top: 20px;
+}
+.franquicias-titulo-inf{
+  font-size: 26px;
+}
+.franquicias-titulo-inf{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.botones {
+  gap: 5px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.additional{
+  gap: o;
+
+}
+
   }
 
   @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) { 
@@ -665,7 +937,7 @@ line-height: 35px;
   .product-price1 {
     margin-left: 0;
   }
-  .agregar-btn1{
+  .agregar-boton{
 
     width: 160px;
     font-size: 14px;
@@ -673,7 +945,19 @@ line-height: 35px;
 
   .locales-info-wrapper::after{
     left: 40%;
+  
   }
+    .details {
+      position: static; 
+      width: auto; 
+      display: none;
+      margin-top: 40px;
+    }
+   
+    .locale-wrapper {
+      display: block; 
+      width: 100%;
+    }
   }
 
   @media (max-width: 900px)

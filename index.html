@@ -20,22 +20,44 @@
     <title>Billy Lomito</title>
 </head>
 <body class="bg-[#020101]">
-    <nav class="bg-black text-white flex items-center justify-between nav-height relative px-4 py-3">
-        <!-- Botón de menú tipo hamburguesa para móviles -->
-        <button class="p-2 hover:border-2 hover:border-f1e4b2 md:hidden z-20">
+    <nav class="bg-black text-white flex items-center justify-between nav-height fixed px-4 py-3 z-20">
+        <button id="menu-btn" class="p-2 hover:border-2 hover:border-f1e4b2 md:hidden z-20">
             <div class="w-8 h-1 bg-f1e4b2 mb-2"></div>
             <div class="w-8 h-1 bg-f1e4b2 mb-2"></div>
             <div class="w-8 h-1 bg-f1e4b2"></div>
           </button>
         
-        <!-- Íconos sociales a la izquierda, ocultos en móviles -->
-        <div class="flex items-center space-x-2 md:ml-6">
+          <!-- Contenedor del menú desplegable para móviles -->
+<div id="mobile-menu" class="fixed top-20 left-0 right-0 bottom-0 bg-black hidden z-20 flex flex-col items-center justify-center text-center">
+  
+ 
+  <div class="menu space-y-4 -mt-52 mb-10">
+    <a href="/franquicias" class="nav-link">FRANQUICIAS</a>
+    <a href="/locales" class="nav-link">LOCALES</a>
+    <a href="/contacto" class="nav-link">CONTACTO</a>
+    <a href="/pedido" class="nav-link">HACÉ TU PEDIDO</a>
+  </div>
+
+
+  <div class="social-icons flex mt-8">
+    <a href="https://instagram.com" target="_blank" class="w-8 h-8">
+      <img src="./src/icons/ins.svg" alt="Instagram" class="w-full h-full">
+    </a>
+    <a href="https://tiktok.com" target="_blank" class="w-8 h-8 ml-4">
+      <img src="./src/icons/tik.svg" alt="TikTok" class="w-full h-full">
+    </a>
+  </div>
+  
+</div>
+
+
+        <div class="flex items-center space-x-2 md:ml-6 ">
           <img src="./src/icons/ins.svg" alt="Instagram" class="h-8 w-8 hidden md:block">
           <img src="./src/icons/tik.svg" alt="TikTok" class="h-8 w-8 hidden md:block">
         </div>
       
         <!-- Enlaces a la izquierda y derecha del logo, espaciados en escritorio -->
-        <div class="flex-1 flex justify-center items-center mx-10">
+        <div class="menu flex-1 flex justify-center items-center mx-10 ">
           <a href="#" class="nav-link text-sm hidden md:block mx-5">FRANQUICIAS</a>
           <a href="#" class="nav-link text-sm hidden md:block mx-5">LOCALES</a>
       
@@ -57,13 +79,13 @@
         
        
      <!-- Swiper -->
-<div class="swiper-container overflow-x-hidden">
-    <!-- Additional required wrapper -->
+<div class="swiper-container overflow-x-hidden mt-12">
+  
     <div class="swiper-wrapper">
       <!-- Slides -->
       <div class="swiper-slide">
-        <img src="./src/img/banner1.png" class="hidden md:block w-full h-full object-cover">
-        <img src="./src/img/banner1mobile.png" class="md:hidden w-full h-full object-cover">
+        <img src="./src/img/banner1.png" class="hidden md:block w-full h-full object-cover ">
+        <img src="./src/img/banner1mobile.png" class="md:hidden w-full h-full object-cover ">
         <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
       </div>
       <div class="swiper-slide">
@@ -72,14 +94,15 @@
         <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
       </div>
       <div class="swiper-slide">
-        <img src="./src/img/banner1.png" class="hidden md:block w-full h-full object-cover">
+        <img src="./src/img/banner1.png" class="hidden md:block w-full h-full object-cover ">
         <img src="./src/img/banner1mobile.png" class="w-full h-full object-cover md:hidden">
         <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
       </div>
       <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
-      
        </div>
        <div class="swiper-pagination absolute bottom-0 md:bottom-16 w-full flex justify-center"></div>
+
+     
 
 
   
@@ -102,7 +125,7 @@
       <h2 class="text-xl md:text-2xl lg:text-xl font-bold mb-2 title-ofertas ml-12 mt-0">ESTÁS SON LAS OFERTAS PARA VOS</h2>
       <p class="mb-1 subtitle-ofertas ml-12">Cada semana explorá un sinfín de sabores nuevos en nuestras<br>hamburguesas y lomos.</p>
         <div id="products-container">
-        <!-- Dynamic product entries will be inserted here by JavaScript -->
+    
       </div>
 
     </div>
@@ -130,8 +153,8 @@
 
 
 <!-- Contenedor para los productos -->
-<div id="additional-products-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:px-20 px-0">
-  <!-- Los productos se cargarán aquí dinámicamente -->
+<div id="additional-products-container" class="additional grid grid-cols-1 md:grid-cols-3 gap-4 sm:px-20 px-0">
+
 </div>
 <button id="toggle-products-button" class="btn-moreproducts mx-auto text-white bg-yellow-500 px-4 py-2 my-4 block sm:hidden">
   + VER MÁS PRODUCTOS
@@ -147,56 +170,228 @@
       <h2 class="locales-title mb-4">LOS LOCALES</h2>
       <p class="locales-subtitle mb-16">No busques más, te dejamos donde<br>encontrar los mejores lomitos de Rosario.</p>
 
-        <!-- Locales Details -->
+
         <div class="locales-details-wrapper">
-          <!-- First Locale -->
+      
           <div class="locale-wrapper mb-14" data-info="info1">
             <div class="locale">
               <img src="/src/icons/location.svg" class="w-7 h-7">
               <span>Laprida 796, Rosario.</span>
+              <img src="/src/icons/flechamenu.svg" class="ml-6 w-6 h-6 f-menu">
             </div>
             <div id="info1" class="details hidden">
-              <span class="h-bold">Horarios:</span><br> Lunes a Viernes 9hs - 12hs / 15hs - 19hs Sábado 8hs a 12:30hs.<br> Domingo Cerrado.
+              <span class="h-bold">Horarios</span><br> Lunes a Viernes 9hs - 12hs / 15hs - 19hs Sábado 8hs a 12:30hs.<br> Domingo Cerrado.
             </div>
             
           </div>
           
-          <!-- Second Locale -->
+        
           <div class="locale-wrapper mb-14" data-info="info2">
             <div class="locale">
               <img src="/src/icons/location.svg" class="w-7 h-7">
               <span>Junín 501, Rosario.</span>
+              <img src="/src/icons/flechamenu.svg" class="ml-12 w-6 h-6 f-menu">
             </div>
             <div id="info2" class="details hidden">
-              <span class="h-bold">Horarios:</span><br> Lunes a Viernes 10hs - 13hs / 16hs - 20hs Sábado 9hs a 13:30hs.<br> Domingo Cerrado.
+              <span class="h-bold">Horarios</span><br> Lunes a Viernes 9hs - 12hs / 15hs - 19hs Sábado 8hs a 12:30hs.<br> Domingo Cerrado.
             </div>
           </div>
           
-          <!-- Third Locale -->
+         
           <div class="locale-wrapper mb-14" data-info="info3">
             <div class="locale">
               <img src="/src/icons/location.svg" class="w-7 h-7">
               <span>Córdoba 1641, Rosario.</span>
+              <img src="/src/icons/flechamenu.svg" class="ml-4 w-6 h-6 f-menu">
             </div>
             <div id="info3" class="details hidden">
-              <span class="h-bold">Horarios:</span><br> Lunes a Viernes 8hs - 11hs / 17hs - 21hs Sábado 10hs a 14:30hs.<br> Domingo Cerrado.
+              <span class="h-bold">Horarios</span><br> Lunes a Viernes 9hs - 12hs / 15hs - 19hs Sábado 8hs a 12:30hs.<br> Domingo Cerrado.
             </div>
           </div>
         </div>
-      </div>
-    
-    <!-- Content Right - Image of the hamburger -->
+      </div> 
+ 
     <div class="locales-image ">
       <img src="/src/img/h-der.svg" alt="Imagen de hamburguesa" class="max-w-sm rounded-lg shadow-md">
     </div>
- 
-</div>
+    </div>
+   
+  </div>
+
+  <div class="gradient-divider"></div>
+
+     <!-- Seccion Franquicias-->
+    <div class="container mx-auto px-4 mt-16 mb-8">
+     
+      <div class="flex flex-col md:flex-row items-center md:items-start">
+      
+        <div class="w-full md:w-1/2">
+          <div class="diamond-shape overflow-hidden">
+            <img src="/src/img/rombo.svg" alt="Comida" class="w-full h-auto">
+          </div>
+        </div>
+        
+       
+        <div class="w-full md:w-1/2 mt-10 md:mt-0 md:pl-8 franquicias-derecha">
+          <h2 class="text-2xl font-bold mb-4 franquicias-titulo">Franquicias</h2>
+          <p class="mb-4 franquicias-texto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio repudiandae sint necessitatibus laboriosam cumque, dicta, ratione magnam non labore, minus illum unde nulla quos sunt nostrum repellendus praesentium fuga itaque.</p>
+        
+          <button class="btn-franquicias inline-flex items-center bg-black text-white py-2 px-4">
+            <img src="/src/icons/flechaderecha.svg" alt="Arrow" class="mr-4 ml-6" style="width: 10px; height: auto;"> 
+            franquicias@billylomito.com.ar
+          </button>
+        </div>
+      </div>
+    
+     
+      <div class="text-center mt-24">
+        <h2 class="text-2xl font-bold mb-4 franquicias-titulo-inf">Sed varius dapibus eros <span class="titulo-color">iaculis consectetur.</span></h2>
+        <p class="mb-4 franquicias-texto-inf">Cada semana explora un sinfín de sabores nuevos en<br>nuestras hamburguesas, lomos y mucho más!</p>
+        <button class="bg-black text-white py-2 px-4 btn-conoce mt-4 mb-10">Conocer más</button>
+      </div>
+    </div>
+    
+
+  <!-- FORM -->
+
+  <div class="bg-[url('/src/img/fondodoble.svg')] bg-cover">
+    <div class="container mx-auto px-4 py-8 pt-20 pb-20">
+      <div class="flex flex-col lg:flex-row items-center justify-between">
+        <!-- Título -->
+        <div class="lg:w-1/3">
+          <h2 class="text-4xl mb-6 lg:mb-0 trabaja-titulo">Trabajá<br>con nosotros.</h2>
+        </div>
+        
+        <!-- Formulario -->
+        <div class="max-w-lg mx-auto ">
+          <form action="#" method="POST" class="space-y-4">
+            <input type="text" name="fullname" placeholder="Nombre y Apellido" class="w-full bg-transparent border-b border-black placeholder-black text-black px-2 py-1">
+            <input type="tel" name="phone" placeholder="Teléfono" class="w-full bg-transparent border-b border-black placeholder-black text-black px-2 py-1">
+            <input type="email" name="email" placeholder="Email" class="w-full bg-transparent border-b border-black placeholder-black text-black px-2 py-1">
+            <textarea name="moreinfo" placeholder="Más info..." class="w-full bg-transparent border-b border-black placeholder-black text-black px-2 py-1"></textarea>
+            
+            <div class="botones flex flex-col sm:flex-row items-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-2 gap-4 w-full">
+
+              <!-- Botón Agregar CV -->
+              <div class="btn-cv text-center bg-transparent cursor-pointer w-full">
+                <label class="btn-cv inline-block w-full px-4 py-2 bg-gray-300 text-black rounded" for="cv-upload">Agregar CV</label>
+                <input type="file" id="cv-upload" name="cv" accept=".pdf,.doc,.docx" class="hidden" onchange="document.getElementById('fileName').textContent = this.files[0].name">
+              </div>
+              <p id="fileName" class="text-center w-full"></p> <!-- Nombre del archivo -->
+            
+              <!-- Botón Enviar mensaje -->
+              <button type="submit" class="btn-enviar bg-black text-white px-4 py-2 w-full rounded">Enviar mensaje</button>
+            
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+<footer class="bg-black text-white">
+  <div class="container mx-auto px-4 py-8">
+   
+    <div class="flex flex-col md:flex-row justify-between items-center">
+    
+      <div class="mb-4 md:mb-0">
+        <p class="p-footer">COPYRIGHT 2024 - TODOS LOS DERECHOS RESERVADOS</p>
+      </div>
+      
+      <!-- Logos en el centro -->
+      <div class="flex space-x-4 mb-4 md:mb-0">
+       
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <img src="/src/icons/ins.svg" alt="Instagram" class="h-8">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+          <img src="/src/icons/tik.svg" alt="TikTok" class="h-8">
+        </a>
+      </div>
+
+    
+      <div>
+        <p class="p-footer">DISEÑO Y DESARROLLO BY AXYOMAGLOBAL</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
 
 
+
+
+
+<script>
+//MENU MOBILE
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const breakpoint = 768; // Define el punto de ruptura para la pantalla, como 768px para tablets.
+
+function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+}
+
+function checkMenu() {
+    if (window.innerWidth > breakpoint && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+    }
+}
+
+menuBtn.addEventListener('click', toggleMenu);
+window.addEventListener('resize', checkMenu);
+
+
+  // Seccion Direcciones Hover desktop y click en mobile 
+
+const toggleDetailsDisplay = (detailsId) => {
+  const details = document.getElementById(detailsId);
+  if (details) {
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+  } else {
+    console.error('No details element found for id', detailsId);
+  }
+};
+const isTouchDevice = () => {
+  return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+};
+
+
+const hideAllDetails = () => {
+  document.querySelectorAll('.details').forEach(detail => {
+    detail.style.display = 'none'; 
+  });
+};
+
+
+const initializeLocaleEvents = () => {
   
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
+  if (isTouchDevice() || window.innerWidth < 1024) {
+    hideAllDetails();
+  }
+
+  document.querySelectorAll('.locale-wrapper').forEach(wrapper => {
+    const locale = wrapper.querySelector('.locale');
+    const details = wrapper.querySelector('.details');
+    
+    locale.addEventListener('click', () => {
+    
+      if (isTouchDevice() || window.innerWidth < 1024) {
+        const isDetailsVisible = details.style.display === 'block';
+        hideAllDetails(); 
+        details.style.display = isDetailsVisible ? 'none' : 'block'; 
+      }
+    });
+  });
+};
+
+initializeLocaleEvents();
+window.addEventListener('resize', initializeLocaleEvents);
+</script>
+
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script>
       //Swipper banners principales
         var swiper = new Swiper('.swiper-container', {
          
@@ -224,68 +419,8 @@
             el: '.swiper-scrollbar',
           },
         });
-
-
-
-  </script>
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-  initializeLocaleEvents();
-});
-
-const toggleDetailsDisplay = (detailsId) => {
-  const details = document.getElementById(detailsId);
-  if (details) {
-    details.style.display = details.style.display === 'block' ? 'none' : 'block';
-  } else {
-    console.error('No details element found for id', detailsId);
-  }
-};
-const isTouchDevice = () => {
-  return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
-};
-
-// Function to hide all details
-const hideAllDetails = () => {
-  document.querySelectorAll('.details').forEach(detail => {
-    detail.style.display = 'none'; // hide detail
-  });
-};
-
-
-const initializeLocaleEvents = () => {
-  // Esconde los detalles inmediatamente en móviles
-  if (isTouchDevice() || window.innerWidth < 1024) {
-    hideAllDetails();
-  }
-
-  document.querySelectorAll('.locale-wrapper').forEach(wrapper => {
-    const locale = wrapper.querySelector('.locale');
-    const details = wrapper.querySelector('.details');
-    
-    locale.addEventListener('click', () => {
-      // En dispositivos móviles, se debe hacer toggle en los detalles
-      if (isTouchDevice() || window.innerWidth < 1024) {
-        const isDetailsVisible = details.style.display === 'block';
-        hideAllDetails(); // Esconde todos los detalles
-        details.style.display = isDetailsVisible ? 'none' : 'block'; // Muestra los que corresponden
-      }
-    });
-  });
-};
-
-
-// Call the initialization function when the script loads
-initializeLocaleEvents();
-
-// Add event listeners to re-initialize on window resize if necessary
-window.addEventListener('resize', initializeLocaleEvents);
-
-
-</script>
-
- 
-      <script src="/cart.js"></script> 
+   </script>
+   <script src="/cart.js"></script> 
 
 
      

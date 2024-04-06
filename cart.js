@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="flex justify-between items-center">
         <div class="text-lg font-bold product-price1 ml-10">$${product.price}</div>
-        <button class="py-2 px-4 agregar-btn1 bg-yellow-500 text-black rounded hover:bg-yellow-600 transition-colors">Agregar al pedido</button>
+        <button class="agregar-boton py-2 px-4 bg-yellow-500 text-black rounded hover:bg-yellow-600 transition-colors">Agregar al pedido</button>
       </div>
     </div>
    
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initializeAddToCartButtons() {
  
-  document.querySelectorAll('.agregar-btn').forEach(button => {
+  document.querySelectorAll('.agregar-btn, .agregar-boton').forEach(button => {
     button.addEventListener('click', addToCart);
   });
 }
@@ -106,11 +106,13 @@ function addToCart() {
   updateCartCount();
 }
 
+
 function updateCartCount() {
   // Actualiza el contador del carrito
   const cartCount = localStorage.getItem('cartCount') || 0;
   document.getElementById('cart-count').textContent = `(${cartCount})`;
 }
+
 
 // Boton seleccionado en carrito 
 
@@ -121,6 +123,7 @@ document.querySelectorAll('.tab-principal').forEach(button => {
   });
 });
 
+// BOTON + PRODUCTOS
 
 function toggleVisibilityOfProducts() {
   const hiddenProducts = document.querySelectorAll('#additional-products-container .product[data-id]');
