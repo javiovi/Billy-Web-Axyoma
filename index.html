@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/icons/iso.svg" type="image/png">
     <script src="https://c.webfontfree.com/c.js?f=Averta-Bold" type="text/javascript"></script>
     <link href="https://db.onlinewebfonts.com/a/SHGt87Zn" rel="stylesheet" type="text/css"/>
     <link href="https://db.onlinewebfonts.com/c/b5d2107c7c6e775b13169eb51d8970c1?family=AvertaStd-Light" rel="stylesheet" type="text/css"/>
@@ -13,6 +14,9 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
     <link href="./src/output.css" rel="stylesheet">
 
 
@@ -32,10 +36,10 @@
   
  
   <div class="menu space-y-4 -mt-52 mb-10">
-    <a href="/franquicias" class="nav-link">FRANQUICIAS</a>
-    <a href="/locales" class="nav-link">LOCALES</a>
-    <a href="/contacto" class="nav-link">CONTACTO</a>
-    <a href="/pedido" class="nav-link">HACÉ TU PEDIDO</a>
+    <a href="#franquicias" class="nav-link">FRANQUICIAS</a>
+    <a href="#locales" class="nav-link">LOCALES</a>
+    <a href="#contacto" class="nav-link">CONTACTO</a>
+    <a href="#pedido" class="nav-link">HACÉ TU PEDIDO</a>
   </div>
 
 
@@ -58,14 +62,15 @@
       
         <!-- Enlaces a la izquierda y derecha del logo, espaciados en escritorio -->
         <div class="menu flex-1 flex justify-center items-center mx-10 ">
-          <a href="#" class="nav-link text-sm hidden md:block mx-5">FRANQUICIAS</a>
-          <a href="#" class="nav-link text-sm hidden md:block mx-5">LOCALES</a>
-      
+          <a href="#franquicias" class="nav-link text-sm hidden md:block mx-5">FRANQUICIAS</a>
+          <a href="#locales" class="nav-link text-sm hidden md:block mx-5">LOCALES</a>
+     
           <!-- Logo en el centro -->
+          <a href="/index.html">
           <img src="/src/img/logonav.svg" alt="BILLY LOMITO" class="h-8 mx-10 logo-nav" style="height: 50px; width: auto;">
-          
-          <a href="#" class="nav-link text-sm hidden md:block mx-5">CONTACTO</a>
-          <a href="#" class="nav-link text-sm hidden md:block mx-5">HACÉ TU PEDIDO</a>
+          </a>
+          <a href="#contacto" class="nav-link text-sm hidden md:block mx-5">CONTACTO</a>
+          <a href="#pedido" class="nav-link text-sm hidden md:block mx-5">HACÉ TU PEDIDO</a>
         </div>
         
         <!-- Ícono del carrito a la derecha -->
@@ -100,12 +105,12 @@
       </div>
       <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
        </div>
-       <div class="swiper-pagination absolute bottom-0 md:bottom-16 w-full flex justify-center"></div>
+       <div class="swiper-pagination absolute bottom-0 md:bottom-16 w-full flex justify-center mb-20 z-10"></div>
 
      
 
 
-  
+       <div data-aos="fade-up">
 <div class="bg-[#020101] text-white px-4 py-8 lg:py-16 md:mt-24">
 
   <div class="grid md:grid-cols-2 gap-60 container-postbanner ">
@@ -132,6 +137,8 @@
     
   </div>
 </div>
+       </div>
+       <div data-aos="fade-up">
 <!-- Título y Subtítulo -->
 <div class="text-center my-8">
   <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold title-carrito mb-3">CONOCÉ LA FAMILIA <span class="billy">BILLY</span></h1>
@@ -150,11 +157,13 @@
   <button id="gaseosas" class="tab-button relative py-2 px-4 text-custom hover:text-customHoverColor">GASEOSAS</button>
   <button id="varios" class="tab-button relative py-2 px-4 text-custom  hover:text-customHoverColor">VARIOS</button>
 </div>
+       </div>
 
-
+<div data-aos="fade-up">
 <!-- Contenedor para los productos -->
 <div id="additional-products-container" class="additional grid grid-cols-1 md:grid-cols-3 gap-4 sm:px-20 px-0">
 
+</div>
 </div>
 <button id="toggle-products-button" class="btn-moreproducts mx-auto text-white bg-yellow-500 px-4 py-2 my-4 block sm:hidden">
   + VER MÁS PRODUCTOS
@@ -163,7 +172,9 @@
 
 <!-- BANNNER LOCALES-->
 
-<div class="locales-section">
+
+<div id="locales" class="locales-section">
+
   <div class="locales-info-wrapper">
   <div class="locales-info mt-24 ml-32">
       <h2 class="conoce-title mb-1">Conocé</h2>
@@ -216,12 +227,16 @@
     </div>
     </div>
    
-  </div>
+</div>
+
+</div>
+</div>
+
 
   <div class="gradient-divider"></div>
-
+ 
      <!-- Seccion Franquicias-->
-    <div class="container mx-auto px-4 mt-16 mb-8">
+    <div id="franquicias" class="container mx-auto px-4 mt-16 mb-8">
      
       <div class="flex flex-col md:flex-row items-center md:items-start">
       
@@ -242,19 +257,21 @@
           </button>
         </div>
       </div>
-    
-     
+      </div>
+  
       <div class="text-center mt-24">
         <h2 class="text-2xl font-bold mb-4 franquicias-titulo-inf">Sed varius dapibus eros <span class="titulo-color">iaculis consectetur.</span></h2>
         <p class="mb-4 franquicias-texto-inf">Cada semana explora un sinfín de sabores nuevos en<br>nuestras hamburguesas, lomos y mucho más!</p>
         <button class="bg-black text-white py-2 px-4 btn-conoce mt-4 mb-10">Conocer más</button>
       </div>
     </div>
+    </div>
     
 
-  <!-- FORM -->
 
-  <div class="bg-[url('/src/img/fondodoble.svg')] bg-cover">
+  <!-- FORM -->
+  <div data-aos="fade-up">
+  <div id="contacto" class="bg-[url('/src/img/fondodoble.svg')] bg-cover">
     <div class="container mx-auto px-4 py-8 pt-20 pb-20">
       <div class="flex flex-col lg:flex-row items-center justify-between">
         <!-- Título -->
@@ -289,18 +306,20 @@
       </div>
     </div>
   </div>
+  </div>
+
   <!-- Footer -->
 <footer class="bg-black text-white">
   <div class="container mx-auto px-4 py-8">
    
     <div class="flex flex-col md:flex-row justify-between items-center">
     
-      <div class="mb-4 md:mb-0">
+      <div class="mb-4 md:mb-0 hidden md:block">
         <p class="p-footer">COPYRIGHT 2024 - TODOS LOS DERECHOS RESERVADOS</p>
       </div>
       
       <!-- Logos en el centro -->
-      <div class="flex space-x-4 mb-4 md:mb-0">
+      <div class="flex space-x-4 mb-4 md:mb-0 icons-footer">
        
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
           <img src="/src/icons/ins.svg" alt="Instagram" class="h-8">
@@ -309,7 +328,9 @@
           <img src="/src/icons/tik.svg" alt="TikTok" class="h-8">
         </a>
       </div>
-
+      <div class="mb-4 md:mb-0 md:hidden">
+        <p class="p-footer text-center">COPYRIGHT 2024 <br> TODOS LOS DERECHOS RESERVADOS</p>
+      </div>
     
       <div>
         <p class="p-footer">DISEÑO Y DESARROLLO BY AXYOMAGLOBAL</p>
@@ -421,8 +442,12 @@ window.addEventListener('resize', initializeLocaleEvents);
         });
    </script>
    <script src="/cart.js"></script> 
-
+  
 
      
 </body>
+<script>
+  AOS.init();
+</script>
+
 </html>

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const destacados = allProducts.filter(product => product.section === 'destacados');
     const generales = allProducts.filter(product => product.section === 'generales');
     
+    
     loadDestacados(destacados);
     loadGenerales(generales);
   })
@@ -24,15 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const productHtml = `
       <div class="dinamic-one -mb-8 flex md:flex-row items-center md:items-start bg-black p-4 rounded-lg overflow-hidden sm:mb-6  sm:items-start">
           <div class="hidden md:block  md:flex-shrink-0  md:w-full md:h-auto">
+          <a href="interna.html?id=${product.id}"  class="block">
             <img src="${product.imageUrl}" alt="${productName}" class=" w-full object-cover object-center">
-           
+          </a>
           </div>
 
 
         <div class="flex-grow">
         <img src="${product.imageUrl}" alt="${productName}" class="md:hidden w-full  object-cover object-center">
-      
-        <h3 class="text-lg font-semibold mb-2 sm:mb-4 product-n">${productName}</h3>
+        <a href="interna.html?id=${product.id}"  class="block"> 
+        <h3 class="text-lg font-semibold mb-2 sm:mb-4 product-n">${productName}</h3> </a>
             <p class="text-sm mb-6 sm:mb-6 product-description">${product.description}</p>
             <div class="flex items-baseline mb-2 sm:mb-4 ">
               <div class="text-lg font-bold product-price">$${product.price}.-</div>
@@ -58,9 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
      const productName = product.name
       const productHtml = `
       <div class="flex flex-col bg-black p-4 rounded-lg overflow-hidden mb-4 sm:mb-6 w-full product" data-id="${product.id}">
+      <a href="interna.html?id=${product.id}"  class="block">
       <img src="${product.imageUrl}" alt="${productName}" class="w-full h-auto object-cover mb-4"> 
+      </a>
       <div class="text-left ">
+      <a href="interna.html?id=${product.id}"  class="block">
         <h3 class="text-lg font-semibold mb-2 product-n1">${productName}</h3>
+        </a>
         <p class="text-sm mb-4 product-description1">${product.description}</p>
       </div>
       <div class="flex justify-between items-center">
@@ -169,3 +175,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+/* GALERIA INTERNA PRODUCTOS */
+

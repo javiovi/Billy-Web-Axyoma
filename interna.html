@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="src/icons/iso.svg" type="image/png">
+    <script src="https://c.webfontfree.com/c.js?f=Averta-Bold" type="text/javascript"></script>
+    <link href="https://db.onlinewebfonts.com/a/SHGt87Zn" rel="stylesheet" type="text/css"/>
+    <link href="https://db.onlinewebfonts.com/c/b5d2107c7c6e775b13169eb51d8970c1?family=AvertaStd-Light" rel="stylesheet" type="text/css"/>
+    <link href="https://db.onlinewebfonts.com/c/efc5d27fcf85239bbfee077b689e3ac9?family=Averta+ExtraBold" rel="stylesheet" type="text/css"/>
+    <link href="https://db.onlinewebfonts.com/c/447315c0c330fd423c8e1cc18024669d?family=AvertaStd-Bold" rel="stylesheet" type="text/css"/>
+    <link href="https://db.onlinewebfonts.com/c/150037e11f159dca84bc4c04549094b6?family=Averta-Regular" rel="stylesheet" type="text/css"/>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+    <link href="./src/output.css" rel="stylesheet">
+
+
+
+    <title>Producto - interna</title>
+</head>
+<body class="bg-[#020101]">
+    <nav class="bg-black text-white flex items-center justify-between nav-height fixed px-4 py-3 z-20">
+        <button id="menu-btn" class="p-2 hover:border-2 hover:border-f1e4b2 md:hidden z-20">
+            <div class="w-8 h-1 bg-f1e4b2 mb-2"></div>
+            <div class="w-8 h-1 bg-f1e4b2 mb-2"></div>
+            <div class="w-8 h-1 bg-f1e4b2"></div>
+          </button>
+        
+          <!-- Contenedor del menú desplegable para móviles -->
+<div id="mobile-menu" class="fixed top-20 left-0 right-0 bottom-0 bg-black hidden z-20 flex flex-col items-center justify-center text-center">
+  
+ 
+  <div class="menu space-y-4 -mt-52 mb-10">
+    <a href="index.html#franquicias" class="nav-link">FRANQUICIAS</a>
+    <a href="index.html#locales" class="nav-link">LOCALES</a>
+    <a href="index.html#contacto" class="nav-link">CONTACTO</a>
+    <a href="index.html#pedido" class="nav-link">HACÉ TU PEDIDO</a>
+  </div>
+
+
+  <div class="social-icons flex mt-8">
+    <a href="https://instagram.com" target="_blank" class="w-8 h-8">
+      <img src="./src/icons/ins.svg" alt="Instagram" class="w-full h-full">
+    </a>
+    <a href="https://tiktok.com" target="_blank" class="w-8 h-8 ml-4">
+      <img src="./src/icons/tik.svg" alt="TikTok" class="w-full h-full">
+    </a>
+  </div>
+  
+</div>
+
+
+        <div class="flex items-center space-x-2 md:ml-6 ">
+          <img src="./src/icons/ins.svg" alt="Instagram" class="h-8 w-8 hidden md:block">
+          <img src="./src/icons/tik.svg" alt="TikTok" class="h-8 w-8 hidden md:block">
+        </div>
+      
+        <!-- Enlaces a la izquierda y derecha del logo, espaciados en escritorio -->
+        <div class="menu flex-1 flex justify-center items-center mx-10 ">
+          <a href="index.html#franquicias" class="nav-link text-sm hidden md:block mx-5">FRANQUICIAS</a>
+          <a href="index.html#locales" class="nav-link text-sm hidden md:block mx-5">LOCALES</a>
+     
+          <!-- Logo en el centro -->
+          <a href="/index.html">
+          <img src="/src/img/logonav.svg" alt="BILLY LOMITO" class="h-8 mx-10 logo-nav" style="height: 50px; width: auto;">
+           </a>
+          <a href="index.html#contacto" class="nav-link text-sm hidden md:block mx-5">CONTACTO</a>
+          <a href="index.html#pedido" class="nav-link text-sm hidden md:block mx-5">HACÉ TU PEDIDO</a>
+        </div>
+        
+        <!-- Ícono del carrito a la derecha -->
+        <div class="relative  md:mr-6">
+          <img src="/src/icons/caricon.svg" alt="Carrito" class="h-12 w-12">
+          <span id="cart-count" class=" text-xs caricon bg-transparent px-2 py-1 absolute top-6 right-8 transform translate-x-1/2 -translate-y-1/2">
+            (0)
+          </span>
+        </div>
+      </nav>
+        
+
+      <div class="container px-2 py-6 mt-20 md:mt-20">
+        <!-- Product Container -->
+        <div class="flex flex-col md:flex-row">
+          <!-- Product Image -->
+          <div class="md:w-2/3">
+            <img id="product-image" src="/src/img/americanocomp.png" alt="Nombre del producto" class="w-full h-auto object-cover  shadow-lg" />
+          </div>
+          
+          <!-- Product Details -->
+          <div class="md:w-1/3 mt-0 md:mt-0 md:ml-8 md:pt-20 ">
+            <h2 id="product-name" class="text-2xl mb-3 titulo-interna mt-8">LOMO AMERICANO</h2>
+            <p id="product-description" class="text-white descripcion-interna mb-10">Queso cheddar, panceta, cebolla caramelizada y salsa BBQ. + Papas y gaseosa a elección.</p>
+            <div class="mb-4">
+
+              <!-- Dropdown for beverage selection -->
+              <div class="accordion-header flex items-center mb-4">
+                <img src="/src/icons/pedidos.svg" alt="Bebida" class="mr-2">
+                <button class="accordion-header flex justify-between items-center border-b border-yellow-100 p-2 w-full text-white">
+                  <span class="selecciona">Selecciona tu bebida</span>
+                  <img src="/src/icons/flechaderecha.svg" alt="Desplegar" class="accordion-icon transform transition-transform">
+                </button>
+              </div>
+              <div class="accordion-content hidden">
+                <div class="flex flex-col">
+                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
+                    <input type="checkbox" name="beverage" value="coke" class="custom-checkbox mr-2">
+                    Coca Cola
+                  </label>
+                  <label class="items border-b border-yellow-100  flex items-center py-2">
+                    <input type="checkbox" name="beverage" value="fanta" class="custom-checkbox mr-2">
+                    Fanta
+                  </label>
+                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
+                    <input type="checkbox" name="beverage" value="sprite" class="custom-checkbox mr-2">
+                    Sprite
+                  </label>
+                </div>
+              </div>
+              <div class="accordion-header flex items-center mb-4">
+                <img src="/src/icons/huevo.svg" alt="ingredientes" class="mr-2">
+                <button  class="flex justify-between items-center border-b border-yellow-100 p-2 w-full text-white">
+                  <span class="selecciona">Selecciona ingredientes</span>
+                  <img src="/src/icons/flechaderecha.svg" alt="Desplegar" class="accordion-icon transform transition-transform" >
+                </button>
+              </div>
+              
+              <div class="accordion-content hidden">
+                <div class="flex flex-col">
+                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
+                    <input type="checkbox" name="ingredientes" value="huevo" class="custom-checkbox mr-2">
+                    Huevo
+                  </label>
+                  <label class="items border-b border-yellow-100  flex items-center py-2">
+                    <input type="checkbox" name="ingredientes" value="tomate" class="custom-checkbox mr-2">
+                  Tomate
+                  </label>
+                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
+                    <input type="checkbox" name="beverage" value="lechuga" class="custom-checkbox mr-2">
+                    Lechuga
+                  </label>
+                </div>
+              </div> 
+              <div class="accordion-header flex items-center mb-4">
+                <img src="/src/icons/adicional.svg" alt="ingredientes" class="mr-2">
+                <button  class="flex justify-between items-center border-b border-yellow-100 p-2 w-full text-white">
+                  <span class="selecciona">Selecciona adicionales</span>
+                  <img src="/src/icons/flechaderecha.svg" alt="Desplegar" class="accordion-icon transform transition-transform" >
+                </button>
+              </div>
+              
+              <div class="accordion-content hidden">
+                <div class="flex flex-col">
+                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
+                    <input type="checkbox" name="ingredientes" value="huevo" class="custom-checkbox mr-2">
+                    Adicional 
+                  </label>
+                  <label class="items border-b border-yellow-100  flex items-center py-2">
+                    <input type="checkbox" name="ingredientes" value="tomate" class="custom-checkbox mr-2">
+                   Adicional
+                  </label>
+                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
+                    <input type="checkbox" name="beverage" value="lechuga" class="custom-checkbox mr-2">
+                    Adicional
+                  </label>
+                </div>
+              </div>
+              <div class="accordion-header flex items-center mb-4">
+                <img src="/src/icons/papas.svg" alt="ingredientes" class="mr-2">
+                <button  class="flex justify-between items-center border-b border-yellow-100 p-2 w-full text-white">
+                  <span class="selecciona">Papas Medianas</span>
+                  <img src="/src/icons/flechaderecha.svg" alt="Desplegar" class="accordion-icon transform transition-transform" >
+                </button>
+              </div>
+              
+              <div class="accordion-content hidden">
+                <div class="flex flex-col">
+                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
+                    <input type="checkbox" name="ingredientes" value="huevo" class="custom-checkbox mr-2">
+                   Papas Grandes
+                  </label>
+                  <label class="items border-b border-yellow-100  flex items-center py-2">
+                    <input type="checkbox" name="ingredientes" value="tomate" class="custom-checkbox mr-2">
+                 Papas Medianas
+                  </label>
+                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
+                    <input type="checkbox" name="beverage" value="lechuga" class="custom-checkbox mr-2">
+                   Papas Chicas
+                  </label>
+                </div>
+              </div> 
+            </div>
+            <div class="mt-8">
+              <span id="product-price" class="product-price1 text-xl ml-6 mr-6 md:ml-0 md:mr-0">$5900.-</span>
+              <button id="add-to-cart-btn" class="agregar-boton mt-4  md:ml-32">Agregar al pedido</button>
+            </div>    
+          </div>
+        </div>
+      </div>
+      
+
+         <!-- Otros productos -->
+      <div class="container mx-auto px-4 py-6 mt:4 md:mt-24">
+        <h2 class="suma-titulo text-3xl mb-3 text-center md:text-left ml-0 md:ml-16">SUMÁ ALGO MÁS A TU PEDIDO</h2>
+        <p class="suma-subtitulo text-lg mb-6 text-center md:text-left ml-0 md:ml-16">Cada semana explorá un sinfín de sabores nuevos en nuestras hamburguesas y lomos.</p>
+        
+     
+        <div id="gallery-products-container-desktop" class="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+          <!-- Productos se cargarán aquí -->
+        </div>
+        
+        <!-- Contenedor para Mobile con Swiper -->
+        <div id="gallery-products-container-mobile" class="swiper-container hidden md:block">
+          <div class="swiper-wrapper">
+  
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      
+      </div>
+      
+      <div class="desktop-banner hidden md:block mt-4">
+        <div class="banner-content">
+            <h1 class="banner-title">Sed varius dapibus eros <span class="banner-titletwo">iaculis consectetur.</span></h1>
+          <p class="banner-subtitle mt-8 mb-10">Cada semana explora un sinfín de sabores nuevos en<br> nuestras hamburguesas, lomos y mucho más!</p>
+          <a href="#conocer-mas" class="banner-button">Conocer más</a>
+        </div>
+      </div>
+
+
+
+      
+ 
+  <!-- Footer -->
+<footer class="bg-black text-white">
+  <div class="container mx-auto px-4 py-8">
+   
+    <div class="flex flex-col md:flex-row justify-between items-center">
+    
+      <div class="mb-4 md:mb-0 hidden md:block">
+        <p class="p-footer">COPYRIGHT 2024 - TODOS LOS DERECHOS RESERVADOS</p>
+      </div>
+      
+      <!-- Logos en el centro -->
+      <div class="flex space-x-4 mb-4 md:mb-0 icons-footer">
+       
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <img src="/src/icons/ins.svg" alt="Instagram" class="h-8">
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+          <img src="/src/icons/tik.svg" alt="TikTok" class="h-8">
+        </a>
+      </div>
+
+      <div class="mb-4 md:mb-0 md:hidden">
+        <p class="p-footer text-center">COPYRIGHT 2024 <br> TODOS LOS DERECHOS RESERVADOS</p>
+      </div> 
+      <div>
+        <p class="p-footer">DISEÑO Y DESARROLLO BY AXYOMAGLOBAL</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+// Selecciona todos los botones de acordeón en el documento
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', function() {
+ 
+    const content = this.nextElementSibling;
+
+ 
+    const icon = this.querySelector('.accordion-icon');
+
+  
+    content.classList.toggle('hidden');
+
+   
+    icon.classList.toggle('rotate-180'); 
+  });
+});
+</script>
+
+<script>
+//MENU MOBILE
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const breakpoint = 768; // Define el punto de ruptura para la pantalla, como 768px para tablets.
+
+function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+}
+
+function checkMenu() {
+    if (window.innerWidth > breakpoint && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+    }
+}
+
+menuBtn.addEventListener('click', toggleMenu);
+window.addEventListener('resize', checkMenu);
+
+
+  // Seccion Direcciones Hover desktop y click en mobile 
+
+const toggleDetailsDisplay = (detailsId) => {
+  const details = document.getElementById(detailsId);
+  if (details) {
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+  } else {
+    console.error('No details element found for id', detailsId);
+  }
+};
+const isTouchDevice = () => {
+  return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+};
+
+
+const hideAllDetails = () => {
+  document.querySelectorAll('.details').forEach(detail => {
+    detail.style.display = 'none'; 
+  });
+};
+
+
+const initializeLocaleEvents = () => {
+  
+  if (isTouchDevice() || window.innerWidth < 1024) {
+    hideAllDetails();
+  }
+
+
+  
+  document.querySelectorAll('.locale-wrapper').forEach(wrapper => {
+    const locale = wrapper.querySelector('.locale');
+    const details = wrapper.querySelector('.details');
+    
+    locale.addEventListener('click', () => {
+    
+      if (isTouchDevice() || window.innerWidth < 1024) {
+        const isDetailsVisible = details.style.display === 'block';
+        hideAllDetails(); 
+        details.style.display = isDetailsVisible ? 'none' : 'block'; 
+      }
+    });
+  });
+};
+
+initializeLocaleEvents();
+window.addEventListener('resize', initializeLocaleEvents);
+
+</script>
+
+<script src="/cart.js"></script>
+<script src="/galeria-interna.js">
+
+</script>
+
+</body>
+</html>

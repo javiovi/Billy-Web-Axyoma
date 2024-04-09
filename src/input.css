@@ -93,15 +93,11 @@ line-height: normal;
     Height: 5px; 
     background:#181818; 
     opacity: 1; 
-    border-radius: 0;
-  
-
-    
+    border-radius: 0;  
   }
   .swiper-pagination-bullet-active {
     background: #EEE0B3 
   }
-
 
 
   .custom-phrase-class {
@@ -109,9 +105,9 @@ line-height: normal;
     color:#EEE0B3; 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
     font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 
   .link-phrase-class
@@ -176,8 +172,7 @@ line-height: normal;
 }
 
 .product-description {
-  color: #EE0B3;
-
+  color: #EEE0B3;
 font-family: "AvertaStd-Light";
 font-size: 14px;
 font-style: normal;
@@ -747,6 +742,164 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
+
+.icons-footer{
+  margin-right: 85px;
+}
+
+/* INTERNA PRODUCTOS */
+
+.titulo-interna{
+color: #EEE0B3;
+font-family: "AvertaStd-Bold";
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: normal; 
+
+}
+.descripcion-interna {
+  color: #EEE0B3;
+font-family: "AvertaStd-Light";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal; 
+}
+
+.selecciona {
+  color: #EEE0B3;
+font-style: italic;
+font-family:"AvertaStd-Light";
+font-size: 20px;
+font-weight: 300;
+line-height: normal;
+}
+.suma-subtitulo {
+  color: #EEE0B3;
+  font-style: normal;
+  font-family:"AvertaStd-Light";
+  font-size: 18px;
+  
+  font-weight: 300;
+  line-height: normal;
+}
+
+.items {
+  color: #EEE0B3;
+  font-style: italic;
+  font-family:"AvertaStd-Light";
+  font-size: 18px;
+  
+  font-weight: 300;
+  line-height: normal;
+}
+
+/* Estilo base para el checkbox */
+.custom-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px; 
+  height: 25px; 
+  border: 2px solid #F1E4B2; 
+  border-radius: 4px; 
+  outline: none; 
+  cursor: pointer; 
+  position: relative;
+  background-color: transparent; 
+}
+
+/* Estilo cuando el checkbox está chequeado */
+.custom-checkbox:checked {
+  background-color: transparent; 
+}
+
+
+.custom-checkbox:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px; 
+  height: 10px;
+  background-color: #EEE0B3; 
+  border-radius: 50%; 
+}
+
+.fondo-acord{
+  background-color: #161616;
+}
+.rotate-180 {
+  transform: rotate(90deg);
+}
+.suma-titulo{
+  color: #EEE0B3;
+font-family: "AvertaStd-Bold";
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.desktop-banner {
+  background: url('/src/img/bannerlocales.png') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 100px 0;
+  
+}
+
+
+.banner-title {
+  color: #EEE0B3;
+
+font-family: 'AvertaStd-Bold';
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal
+}
+
+.banner-titletwo{
+  color:#E8AB35;
+  font-family: 'AvertaStd-Bold';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal 
+}
+.banner-subtitle {
+  color: #EEE0B3;
+text-align: center;
+font-family: "AvertaStd-Light";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.banner-button {
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "AvertaStd-Light" ;
+  background-color: transparent; 
+  color: #EEE0B3; 
+  padding: 8px 25px;
+  border-radius: 5px;
+  border-color: #EEE0B3;
+ border: solid;
+}
+.banner-button:hover{
+  background: #D1C1A1; 
+  color: black; 
+  cursor: pointer;  
+}
+
+
+
 @media screen and (min-width: 1024px) { /* For desktop */
   .locales-container {
     flex-direction: row;
@@ -901,6 +1054,12 @@ line-height: normal;
   gap: o;
 
 }
+.icons-footer{
+  margin-right: 0;
+}
+.desktop-banner {
+  display: none;
+}
 
   }
 
@@ -966,5 +1125,3 @@ line-height: normal;
       display: none;
     }
   }
-
-  
