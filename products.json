@@ -5,7 +5,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y mayonesa en pan francés.",
       "price": 6800,
       "previousPrice": 7400,
-      "imageUrl": "/src/img/lomo-super.png",
+      "imageUrl": "./src/img/lomo-super.png",
       "section": "destacados"
     },
     {
@@ -14,7 +14,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl": "/src/img/hamb-extra.png",
+      "imageUrl": "./src/img/hamb-extra.png",
       "section": "destacados"
     },
 
@@ -24,7 +24,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl": "/src/img/lomoame.png",
+      "imageUrl": "./src/img/lomoame.png",
       "section": "generales"
      
     },
@@ -35,7 +35,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl": "/src/img/lomoame.png",
+      "imageUrl": "./src/img/lomoame.png",
       "section": "generales"
      
     },
@@ -45,7 +45,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl": "/src/img/lomoame.png",
+      "imageUrl": "./src/img/lomoame.png",
       "section": "generales"
      
     },
@@ -56,7 +56,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl":"/src/img/lomoame.png",
+      "imageUrl":"./src/img/lomoame.png",
       "section": "generales"
       
     },
@@ -67,7 +67,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl":"/src/img/lomoame.png",
+      "imageUrl":"./src/img/lomoame.png",
       "section": "generales"
     
     },
@@ -78,7 +78,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl": "/src/img/lomoame.png",
+      "imageUrl": "./src/img/lomoame.png",
       "section": "generales"
       
     },
@@ -88,7 +88,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl": "/src/img/lomoame.png",
+      "imageUrl": "./src/img/lomoame.png",
       "section": "generales"
    
     },
@@ -98,7 +98,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl": "/src/img/lomoame.png",
+      "imageUrl": "./src/img/lomoame.png",
       "section": "generales"
   
     },
@@ -108,7 +108,7 @@
       "description": "Con tomate, lechuga, jamón, queso, huevo y pan bebete de hamburguesa.",
       "price": 6300,
       "previousPrice": 7100,
-      "imageUrl": "/src/img/lomoame.png",
+      "imageUrl": "./src/img/lomoame.png",
       "section": "generales"
 
     }

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="text-lg font-bold product-price">$${product.price}.-</div>
               <div class="text-sm product-previous-price">$${product.previousPrice}.-</div>
             </div>
-            <button class="mt-2 py-2 px-4 agregar-btn">Agregar al pedido</button>
+            <button class="mt-2 agregar-btn">Agregar al pedido</button>
         
           </div>
         </div>
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="flex justify-between items-center">
         <div class="text-lg font-bold product-price1 ml-10">$${product.price}</div>
-        <button class="agregar-boton py-2 px-4 bg-yellow-500 text-black rounded hover:bg-yellow-600 transition-colors">Agregar al pedido</button>
+        <button class="agregar-boton">Agregar al pedido</button>
       </div>
     </div>
    

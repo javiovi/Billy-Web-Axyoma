@@ -1579,10 +1579,6 @@ video {
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/src\/img\/fondodoble\.svg\'\)\] {
-  background-image: url('/src/img/fondodoble.svg');
-}
-
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
@@ -2278,7 +2274,6 @@ nav {
 /* seccion locales */
 
 .locales-section {
-  background-image: url('/src/img/bannerlocales.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2752,7 +2747,8 @@ input:focus, textarea:focus {
 }
 
 .desktop-banner {
-  background: url('/src/img/bannerlocales.png') no-repeat center center;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
   padding: 100px 0;

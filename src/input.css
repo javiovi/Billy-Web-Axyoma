@@ -382,7 +382,7 @@ font-family: "AvertaStd-Light";
 /* seccion locales */
 
 .locales-section {
-  background-image: url('/src/img/bannerlocales.png');
+ 
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
@@ -842,9 +842,10 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
-
 .desktop-banner {
-  background: url('/src/img/bannerlocales.png') no-repeat center center;
+  
+  background-position: center; 
+  background-repeat: no-repeat; 
   background-size: cover;
   text-align: center;
   padding: 100px 0;
