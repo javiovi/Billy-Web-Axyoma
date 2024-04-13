@@ -24,15 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const productName = product.name.replace('EXT', "<br class='sm:hidden'>EXT");
       const productHtml = `
       <div class="dinamic-one -mb-8 flex md:flex-row items-center md:items-start bg-black p-4 rounded-lg overflow-hidden sm:mb-6  sm:items-start">
-          <div class="hidden md:block  md:flex-shrink-0  md:w-full md:h-auto">
-          <a href="interna.html?id=${product.id}"  class="block">
-            <img src="${product.imageUrl}" alt="${productName}" class=" w-full object-cover object-center">
-          </a>
-          </div>
-
+      <div class="hidden md:block  md:flex-shrink-0  md:w-full md:h-auto">
+      <a href="interna.html?id=${product.id}"  class="block">
+        <img src="${product.imageUrl}" alt="${productName}" class="w-full object-cover object-center">
+      </a>
+      </div>
 
         <div class="flex-grow">
-        <img src="${product.imageUrl}" alt="${productName}" class="md:hidden w-full  object-cover object-center">
+        <img src="${product.imageUrl}" alt="${productName}" class="md:hidden w-full object-cover object-center">
         <a href="interna.html?id=${product.id}"  class="block"> 
         <h3 class="text-lg font-semibold mb-2 sm:mb-4 product-n">${productName}</h3> </a>
             <p class="text-sm mb-6 sm:mb-6 product-description">${product.description}</p>
@@ -45,12 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `;
-      // Usa insertAdjacentHTML en lugar de innerHTML +=
+      // Usa insertAdjacentHTML en lugar de innerHTML +
       container.insertAdjacentHTML('beforeend', productHtml);
     });
 
     // Ahora inicializa los botones después de agregarlos
     initializeAddToCartButtons();
+
   }
   function loadGenerales(products) {
     const container = document.getElementById('additional-products-container');
