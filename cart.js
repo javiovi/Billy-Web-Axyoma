@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     products.forEach((product) => {
       const productName = product.name.replace('EXT', "<br class='sm:hidden'>EXT");
       const productHtml = `
-      <div class="dinamic-one -mb-8 flex md:flex-row items-center md:items-start bg-black p-4 rounded-lg overflow-hidden sm:mb-6  sm:items-start">
+      <div class="dinamic-one -mb-8 flex md:flex-row items-center md:items-start bg-black p-6 rounded-lg overflow-hidden sm:mb-6  sm:items-start">
       <div class="hidden md:block  md:flex-shrink-0  md:w-full md:h-auto">
       <a href="interna.html?id=${product.id}"  class="block">
         <img src="${product.imageUrl}" alt="${productName}" class="w-full object-cover object-center">
