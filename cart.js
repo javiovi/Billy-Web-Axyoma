@@ -95,8 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   
-
-
 function initializeAddToCartButtons() {
  
   document.querySelectorAll('.agregar-btn, .agregar-boton').forEach(button => {
@@ -119,6 +117,10 @@ function updateCartCount() {
   document.getElementById('cart-count').textContent = `(${cartCount})`;
 }
 
+function updateCartModal() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  updateCartList(cart); // Asegúrate de que esta función esté definida y actualice el modal con los productos
+}
 
 // Boton seleccionado en carrito 
 
@@ -128,6 +130,10 @@ document.querySelectorAll('.tab-principal').forEach(button => {
     this.classList.add('active');
   });
 });
+
+
+
+
 
 // BOTON + PRODUCTOS
 
@@ -175,5 +181,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-/* GALERIA INTERNA PRODUCTOS */
+
 
