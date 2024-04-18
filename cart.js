@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     loadDestacados(destacados);
     loadGenerales(generales);
+  
   })
   .catch(error => {
     console.error('Error al cargar los productos:', error);
@@ -117,10 +118,6 @@ function updateCartCount() {
   document.getElementById('cart-count').textContent = `(${cartCount})`;
 }
 
-function updateCartModal() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  updateCartList(cart); // Asegúrate de que esta función esté definida y actualice el modal con los productos
-}
 
 // Boton seleccionado en carrito 
 
@@ -130,6 +127,126 @@ document.querySelectorAll('.tab-principal').forEach(button => {
     this.classList.add('active');
   });
 });
+
+
+// MODAL CARRITO - Apertura
+document.getElementById('open-cart-modal').addEventListener('click', function() {
+  document.getElementById('cart-modal').classList.add('active');
+});
+
+// Cierra el modal al hacer clic fuera de él
+document.getElementById('cart-modal').addEventListener('click', function(event) {
+  if (event.target.id === 'cart-modal') {
+    document.getElementById('cart-modal').classList.remove('active');
+  }
+});
+
+// Cierra el modal al hacer clic en "Continuar con mi pedido" o en otra área de cerrar
+document.getElementById('continue-button').addEventListener('click', function() {
+  document.getElementById('cart-modal').classList.remove('active');
+  
+  // window.location.href = '/-pagina-de-carrito';
+});
+
+// Limpiar el carrito
+document.getElementById('clear-cart').addEventListener('click', function() {
+  localStorage.removeItem('cart');
+  localStorage.removeItem('cartCount');
+  document.getElementById('cart-count').textContent = '(0)';
+  document.getElementById('cart-items-list').innerHTML = '';
+  document.getElementById('cart-modal').classList.remove('active');
+});
+
+// Función para inicializar el carrito desde el localStorage o crear uno nuevo si no existe
+function initializeCart() {
+  if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', JSON.stringify([]));
+  }
+  updateCartCount();
+  updateCartModal();
+}
+
+// Función para actualizar la cuenta del carrito
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart'));
+  const count = cart.reduce((accumulator, product) => accumulator + product.quantity, 0);
+  document.getElementById('cart-count').textContent = `(${count})`;
+}
+
+// Función para agregar productos al carrito
+function addToCart(event) {
+  const button = event.target;
+  const productCard = button.closest('.product');
+  const product = {
+    id: productCard.dataset.id,
+    name: productCard.querySelector('.product-n1').textContent,
+    imageUrl: productCard.querySelector('img').src,
+    price: productCard.querySelector('.product-price1').textContent,
+    description: productCard.querySelector('.product-description1').textContent,
+    quantity: 1 // Asumimos que cada vez se agrega 1 cantidad del producto
+  };
+
+  let cart = JSON.parse(localStorage.getItem('cart'));
+  const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+  if (existingProductIndex > -1) {
+    cart[existingProductIndex].quantity += 1; // Incrementa la cantidad si el producto ya existe
+  } else {
+    cart.push(product); // Agrega el producto al carrito si no existe
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart)); // Actualiza el carrito en localStorage
+  updateCartCount();
+  updateCartModal(); // Actualiza el modal del carrito para mostrar el nuevo producto
+}
+
+// Función para actualizar la lista de productos en el modal del carrito
+function updateCartModal() {
+  const cart = JSON.parse(localStorage.getItem('cart'));
+  const cartItemsList = document.getElementById('cart-items-list');
+  cartItemsList.innerHTML = '';
+
+  cart.forEach(product => {
+    cartItemsList.innerHTML += `
+    <div class="cart-item" data-id="${product.id}">
+    <img src="${product.imageUrl}" alt="${product.name}" />
+    <div class="cart-item-info">
+      <div class="cart-item-title">${product.name}</div>
+      <div class="cart-item-price">${product.price}</div>
+      <p class="text-sm mb-4 cart-item-description">${product.description}</p>
+      <div class="cart-item-quantity">
+       
+        <input type="text" class="quantity-input" value="${product.quantity}" />
+        <span class="quantity-label">Cantidad</span>  
+        <button class="cart-item-remove" onclick="removeFromCart(${product.id})">
+        <img src="./src/icons/basurero.svg" alt="Eliminar" class="remove-icon"/>
+        </button>
+      </div>
+    </div>
+   
+  </div>
+`;
+  });
+}
+
+// Función para eliminar un item del carrito
+function removeFromCart(productId) {
+  let cart = JSON.parse(localStorage.getItem('cart'));
+  cart = cart.filter(product => product.id != productId);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartModal();
+  updateCartCount();
+}
+
+// Botón para limpiar el carrito
+document.getElementById('clear-cart').addEventListener('click', function() {
+  localStorage.setItem('cart', JSON.stringify([]));
+  updateCartModal();
+  updateCartCount();
+});
+
+// Llamada a la función inicializar al cargar la página
+document.addEventListener('DOMContentLoaded', initializeCart);
 
 
 
@@ -181,5 +298,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-

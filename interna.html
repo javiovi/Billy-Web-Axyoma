@@ -70,13 +70,36 @@
           <a href="index.html#pedido" class="nav-link text-sm hidden md:block mx-5">HACÉ TU PEDIDO</a>
         </div>
         
-        <!-- Ícono del carrito a la derecha -->
-        <div class="relative  md:mr-6">
+         <!-- Ícono del carrito a la derecha -->
+         <button id="open-cart-modal" class="relative  md:mr-6">
           <img src="./src/icons/caricon.svg" alt="Carrito" class="h-12 w-12">
           <span id="cart-count" class=" text-xs caricon bg-transparent px-2 py-1 absolute top-6 right-8 transform translate-x-1/2 -translate-y-1/2">
             (0)
           </span>
-        </div>
+        </button>
+      
+        <!-- Modal CARRITO-->
+<div id="cart-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 overflow-y-auto h-full w-full">
+  <!-- Modal content -->
+  <div class="contenido-del-modal relative top-20 mx-auto p-5 border w-96 shadow-lg ">
+    <div class="mt-0 text-center">
+      <h3 class="text-lg leading-4" id="modal-title">PEDIDOS AGREGADOS</h3>
+      <!-- Lista de pedidos -->
+      <div id="cart-items-list" class="my-2">
+        <!-- Los items del carritO -->
+      </div>
+      <!-- Botón de acción del modal -->
+      <div class="mt-auto"> <!-- Esta clase mt-auto empujará los botones hacia abajo, independientemente del contenido que haya encima -->
+        <button id="continue-button" class="w-full px-6 py-2">
+         CONTINUAR CON MI PEDIDO
+        </button>
+      
+      </div>
+    </div>
+</div>
+      
+      
+      
       </nav>
         
 
@@ -354,7 +377,6 @@ initializeLocaleEvents();
 window.addEventListener('resize', initializeLocaleEvents);
 
 </script>
-
 <script src="./cart.js"></script>
 <script src="./galeria-interna.js">
 
