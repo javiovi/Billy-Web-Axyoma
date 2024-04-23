@@ -145,7 +145,7 @@ document.getElementById('cart-modal').addEventListener('click', function(event) 
 document.getElementById('continue-button').addEventListener('click', function() {
   document.getElementById('cart-modal').classList.remove('active');
   
-  // window.location.href = '/-pagina-de-carrito';
+   window.location.href = './compra.html';
 });
 
 // Limpiar el carrito

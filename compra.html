@@ -18,7 +18,7 @@
 
 
 
-    <title>Producto - interna</title>
+    <title>Billy - Finalizar Compra</title>
 </head>
 <body class="bg-[#020101]">
     <nav class="bg-black text-white flex items-center justify-between nav-height fixed px-4 py-3 z-20">
@@ -96,161 +96,91 @@
       
       </div>
     </div>
-</div>
-      
-      
-      
+</div>  
       </nav>
         
-
-      <div class="container px-2 py-6 mt-20 md:mt-20">
-        <!-- Product Container -->
-        <div class="flex flex-col md:flex-row">
-          <!-- Product Image -->
-          <div class="md:w-2/3">
-            <img id="product-image" src="./src/img/americanocomp.png" alt="Nombre del producto" class="w-full h-auto object-cover  shadow-lg" />
-          </div>
+      <div class="checkout-section">
+        <div class="checkout-form">
+          <h2>Finalizá tu pedido.</h2>
+          <p>¡Ya casi terminas! Completá los siguientes datos:</p>
+          <form>
+            <div class="form-group">
           
-          <!-- Product Details -->
-          <div class="md:w-1/3 mt-0 md:mt-0 md:ml-8 md:pt-20 ">
-            <h2 id="product-name" class="text-2xl mb-3 titulo-interna mt-8">LOMO AMERICANO</h2>
-            <p id="product-description" class="text-white descripcion-interna mb-10">Queso cheddar, panceta, cebolla caramelizada y salsa BBQ. + Papas y gaseosa a elección.</p>
-            <div class="mb-4">
-
-              <!-- Dropdown for beverage selection -->
-              <div class="accordion-header flex items-center mb-4">
-                <img src="./src/icons/pedidos.svg" alt="Bebida" class="mr-2">
-                <button class="accordion-header flex justify-between items-center border-b border-yellow-100 p-2 w-full text-white">
-                  <span class="selecciona">Selecciona tu bebida</span>
-                  <img src="./src/icons/flechaderecha.svg" alt="Desplegar" class="accordion-icon transform transition-transform">
-                </button>
-              </div>
-              <div class="accordion-content hidden">
-                <div class="flex flex-col">
-                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
-                    <input type="checkbox" name="beverage" value="coke" class="custom-checkbox mr-2">
-                    Coca Cola
-                  </label>
-                  <label class="items border-b border-yellow-100  flex items-center py-2">
-                    <input type="checkbox" name="beverage" value="fanta" class="custom-checkbox mr-2">
-                    Fanta
-                  </label>
-                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
-                    <input type="checkbox" name="beverage" value="sprite" class="custom-checkbox mr-2">
-                    Sprite
-                  </label>
-                </div>
-              </div>
-              <div class="accordion-header flex items-center mb-4">
-                <img src="./src/icons/huevo.svg" alt="ingredientes" class="mr-2">
-                <button  class="flex justify-between items-center border-b border-yellow-100 p-2 w-full text-white">
-                  <span class="selecciona">Selecciona ingredientes</span>
-                  <img src="./src/icons/flechaderecha.svg" alt="Desplegar" class="accordion-icon transform transition-transform" >
-                </button>
-              </div>
-              
-              <div class="accordion-content hidden">
-                <div class="flex flex-col">
-                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
-                    <input type="checkbox" name="ingredientes" value="huevo" class="custom-checkbox mr-2">
-                    Huevo
-                  </label>
-                  <label class="items border-b border-yellow-100  flex items-center py-2">
-                    <input type="checkbox" name="ingredientes" value="tomate" class="custom-checkbox mr-2">
-                  Tomate
-                  </label>
-                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
-                    <input type="checkbox" name="beverage" value="lechuga" class="custom-checkbox mr-2">
-                    Lechuga
-                  </label>
-                </div>
-              </div> 
-              <div class="accordion-header flex items-center mb-4">
-                <img src="./src/icons/adicional.svg" alt="ingredientes" class="mr-2">
-                <button  class="flex justify-between items-center border-b border-yellow-100 p-2 w-full text-white">
-                  <span class="selecciona">Selecciona adicionales</span>
-                  <img src="./src/icons/flechaderecha.svg" alt="Desplegar" class="accordion-icon transform transition-transform" >
-                </button>
-              </div>
-              
-              <div class="accordion-content hidden">
-                <div class="flex flex-col">
-                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
-                    <input type="checkbox" name="ingredientes" value="huevo" class="custom-checkbox mr-2">
-                    Adicional 
-                  </label>
-                  <label class="items border-b border-yellow-100  flex items-center py-2">
-                    <input type="checkbox" name="ingredientes" value="tomate" class="custom-checkbox mr-2">
-                   Adicional
-                  </label>
-                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
-                    <input type="checkbox" name="beverage" value="lechuga" class="custom-checkbox mr-2">
-                    Adicional
-                  </label>
-                </div>
-              </div>
-              <div class="accordion-header flex items-center mb-4">
-                <img src="./src/icons/papas.svg" alt="ingredientes" class="mr-2">
-                <button  class="flex justify-between items-center border-b border-yellow-100 p-2 w-full text-white">
-                  <span class="selecciona">Papas Medianas</span>
-                  <img src="./src/icons/flechaderecha.svg" alt="Desplegar" class="accordion-icon transform transition-transform" >
-                </button>
-              </div>
-              
-              <div class="accordion-content hidden">
-                <div class="flex flex-col">
-                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
-                    <input type="checkbox" name="ingredientes" value="huevo" class="custom-checkbox mr-2">
-                   Papas Grandes
-                  </label>
-                  <label class="items border-b border-yellow-100  flex items-center py-2">
-                    <input type="checkbox" name="ingredientes" value="tomate" class="custom-checkbox mr-2">
-                 Papas Medianas
-                  </label>
-                  <label class="flex items-center py-2 items border-b border-yellow-100 ">
-                    <input type="checkbox" name="beverage" value="lechuga" class="custom-checkbox mr-2">
-                   Papas Chicas
-                  </label>
-                </div>
-              </div> 
+              <input type="text" id="full-name" placeholder="Nombre y Apellido">
             </div>
             
-            <div class="mt-8">
-              <span id="product-price" class="product-price1 text-xl ml-6 mr-6 md:ml-0 md:mr-0">$5900.-</span>
-              <button id="add-to-cart-btn" class="agregar-boton mt-4  md:ml-32">Agregar al pedido</button>
-            </div>    
-          </div>
+            <div class="form-group">
+            
+              <input type="email" id="email" placeholder="Email">
+            </div>
+            
+            <div class="form-group">
+              <label for="pickup">Retirá el pedido en nuestro local</label>
+              <div class="checkbox-wrapper">
+                <input type="checkbox"  class="custom-checkbox-b">
+                <span class="checkbox-label">Laprida 796, Rosario</span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="home-delivery">¿Lo querés comer en tu casa?</label>
+              <div class="checkbox-wrapper">
+                <input type="checkbox"  name="delivery"class="custom-checkbox-b">
+                <input type="text" id="address" placeholder="Dirección de calle y número" class="address-input">
+              </div>
+            </div>
+            
+            
+            <div class="form-group">
+              <div class="select-wrapper">
+                <img src="./src/img/tarjetas.svg" alt="Payment Icon" class="payment-icon"/>
+                <select id="payment-method" class="payment-select">
+                  <option value="" disabled selected>Seleccioná tu método de pago</option>
+                  <option value="cash">En efectivo</option>
+                  <option value="card">Tarjeta</option>
+                </select>
+                <img src="./src/icons/flechamenu.svg" alt="Arrow Icon" class="arrow-icon"/>
+              </div>
+            </div>
+            
+            
+            <div class="form-group">
+              <input type="text" id="comments" placeholder="¿Querés aclararnos algún detalle en tu pedido?" class="input-coments"></textarea>
+            </div>
+          
+          </form>
         </div>
-      </div>
-      
 
-         <!-- Otros productos -->
-      <div class="container mx-auto px-4 py-6 mt:4 md:mt-24">
-        <h2 class="suma-titulo text-3xl mb-3 text-center md:text-left ml-0 md:ml-16">SUMÁ ALGO MÁS A TU PEDIDO</h2>
-        <p class="suma-subtitulo text-lg mb-6 text-center md:text-left ml-0 md:ml-16">Cada semana explorá un sinfín de sabores nuevos en nuestras hamburguesas y lomos.</p>
-        
-     
-        <div id="gallery-products-container-desktop" class="grid grid-cols-1 md:grid-cols-3 gap-4 ">
-          <!-- Productos se cargarán aquí -->
-        </div>
-        
-        <!-- Contenedor para Mobile con Swiper -->
-        <div id="gallery-products-container-mobile" class="swiper-container hidden md:block">
-          <div class="swiper-wrapper">
-  
+        <div class="details-section">
+          <h2>¡ESTO ES LO QUE VAS A PEDIR PARA COMER!</h2>
+          <div id="order-items-list">
+            <div class="item-container">
+              <div class="item-image">
+                <img src="./src/img/americano.png" alt="LOMO AMERICANO" />
+              </div>
+              <div class="item-details">
+                <h3>LOMO AMERICANO</h3>
+                <p class="price">$5900.-</p>
+                <p class="description">Queso cheddar, panceta, cebolla caramelizada y salsa BBQ. + Papas y gaseosa a elección.</p>
+                <div class="item-extras">
+                  <p>Gaseosa: <span>Coca Cola</span></p>
+                  <p>Adicional: <span>Huevo (+$300)</span></p>
+                  <p>Papas: <span>Grandes (+$300)</span></p>
+                  <p>Ingredientes: <span>Sin cebolla</span></p>
+                </div>
+                <p class="quantity">Cantidad: <span>1</span></p>
+              </div>
+            </div>
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="order-summary">
+            <p>Retiro del pedido: <span>A domicilio (Córdoba 2535, Rosario)</span> +$750.- por envío</p>
+            <p>Método de pago: <span>En efectivo</span></p>
+            <h3>Total de pago: <span>$13,150.-</span></h3>
+          </div>
         </div>
-      
+
       </div>
       
-      <div class="desktop-banner hidden md:block mt-4" style="background-image: url('./src/img/bannerlocales.png')">
-        <div class="banner-content">
-            <h1 class="banner-title">Sed varius dapibus eros <span class="banner-titletwo">iaculis consectetur.</span></h1>
-          <p class="banner-subtitle mt-8 mb-10">Cada semana explora un sinfín de sabores nuevos en<br> nuestras hamburguesas, lomos y mucho más!</p>
-          <a href="#conocer-mas" class="banner-button">Conocer más</a>
-        </div>
-      </div>
 
 
 

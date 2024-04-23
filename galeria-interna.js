@@ -21,11 +21,10 @@ function initializeMobileCarousel() {
           el: '.swiper-pagination',
           clickable: true,
         },
-        // Asegúrate de incluir otras opciones que necesitas para Swiper aquí
+       
       });
     } else if (window.innerWidth >= 640 && mobileSwiper) {
-      mobileSwiper.destroy(true, true); // Destruye Swiper cuando la ventana es más grande que 640px
-      mobileSwiper = null;
+      mobileSwiper.destroy(true, true); 
     }
   }
   
