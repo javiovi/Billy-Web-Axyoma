@@ -1550,12 +1550,12 @@ line-height: normal;
 
 }
 
-/* Remove default arrow in Firefox */
+
 .form-group .payment-select::-ms-expand {
   display: none;
 }
 
-/* Remove default arrow in IE */
+
 .form-group .payment-select::-ms-expand {
   display: none;
 }
@@ -1563,67 +1563,83 @@ line-height: normal;
   width: 100%;
 
 }
-
+/* SECCION DERECHA CARRITO FINAL */
 
 .details-section {
   background-color: #EEE0B3; 
-  padding: 20px; 
+  padding-top: 0% 0px; 
   border-radius: 5px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  margin: 20px; 
+ 
   width: 100%; 
 }
 
 .details-section h2 {
   color: #020101; 
   font-family:'AvertaStd-Bold';
-  font-weight: 500;
-  margin-bottom: 20px; 
+  font-weight: 700;
+  margin-bottom: 22px; 
   background-color: #E2C773;
   padding: 15px;
 }
 
 .details-section #order-items-list {
   margin-bottom: 20px; 
+  margin-left: 30px;
+  margin-right: 10px;
 }
 
 .details-section .order-summary p,
 .details-section .order-summary h3 {
-  color: #333; /* Color de la fuente del resumen del pedido */
-  margin-bottom: 10px; /* Espacio entre elementos del resumen */
+  color: #020101; 
+  margin-bottom: 10px; 
+  margin-left: 30px;
 }
 
 .details-section .order-summary h3 {
-  font-weight: bold; /* Título del total en negrita */
+  font-weight: bold; 
 }
 
 .details-section .order-summary span {
-  font-weight: bold; /* Detalles del resumen en negrita */
+  font-weight: bold; 
 }
 
+.details-section .order-summary h3 {
+  color: #020101;
+  font-family: 'AvertaStd-Bold';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal; 
+  margin-top: 0px;
+  text-align: end;
+  margin-right: 20px;
+  padding-bottom: 30px;
 
-
+}
 /* ITEMS QUE LUEGO VAN A ASER DINAMICOS */
 .item-container {
   display: flex;
   align-items: center;
   background-color: transparent; 
-  
-  margin-bottom: 20px; /* Space between items */
+
+margin-top: -30px; 
  
 }
 
 .item-image img {
-  width: 300px; /* Adjust the width as needed */
+  width: 300px; 
   height: auto;
-  
-  margin-right: 0px;
+  min-width: 200px;
+  margin-top:-30px;
  
 }
 
 .item-details {
   flex-grow: 1;
-padding-left: 10px;
+padding-left: 30px;
+margin-top: 30px;
+margin-bottom: 20px;
 }
 
 .item-details h3 {
@@ -1651,6 +1667,7 @@ padding-left: 10px;
   color: #020101; 
   margin-bottom: 5px;
   font-family: 'AvertaStd-Light';
+  font-weight: 600;
  
 }
 
@@ -1669,8 +1686,9 @@ padding-left: 10px;
 
 
 
+/* Para manejar la responsividad, puedes usar media queries para ajustar los estilos en pantallas más pequeñas */
+@media (max-width: 768px) {
 
-@media (max-width: 768px) { /* Ajustar según tu punto de ruptura para dispositivos móviles */
   .details-section {
     width: auto; /* Auto-ajuste de ancho en móviles */
   }
@@ -1679,11 +1697,10 @@ padding-left: 10px;
   .details-section {
     flex-basis: 100%;
   }
-}
 
 
-/* Para manejar la responsividad, puedes usar media queries para ajustar los estilos en pantallas más pequeñas */
-@media (max-width: 768px) {
+
+
   .checkout-section {
     width: 100%;
     padding: 10px;
