@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     products.forEach((product) => {
      const productName = product.name
       const productHtml = `
-      <div class="flex flex-col bg-black p-4 rounded-lg overflow-hidden mb-4 sm:mb-6 w-full product" data-id="${product.id}">
+      <div class="flex flex-col bg-black p-4 rounded-lg overflow-hidden mb-4 sm:mb-6 mx-auto sm:mx-0 product" data-id="${product.id}">
       <a href="interna.html?id=${product.id}"  class="block">
       <img src="${product.imageUrl}" alt="${productName}" class="w-full h-auto object-cover mb-4"> 
       </a>
@@ -186,7 +186,7 @@ function addToCart(event) {
     quantity: 1 // Asumimos que cada vez se agrega 1 cantidad del producto
   };
 
-  let cart = JSON.parse(localStorage.getItem('cart'));
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
   const existingProductIndex = cart.findIndex(item => item.id === product.id);
 
   if (existingProductIndex > -1) {
@@ -197,7 +197,9 @@ function addToCart(event) {
 
   localStorage.setItem('cart', JSON.stringify(cart)); // Actualiza el carrito en localStorage
   updateCartCount();
-  updateCartModal(); // Actualiza el modal del carrito para mostrar el nuevo producto
+  updateCartModal(); // Actualiza el modal del carrito para mostrar el nuevo product0
+
+  document.getElementById('cart-modal').classList.add('active');
 }
 
 // Función para actualizar la lista de productos en el modal del carrito

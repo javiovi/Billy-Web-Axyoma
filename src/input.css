@@ -32,10 +32,10 @@ nav {
   .nav-link:hover {
     color: #F1E4B2;
 
-   font-family: "Averta ExtraBold";
+   font-family: "AvertaStd-Bold";
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: normal;
   }
   
@@ -967,7 +967,7 @@ line-height: normal;
       transform: translateX(-50%);
       z-index: 10;
     }
-   
+ 
 
   
     .locales-image {
@@ -1361,7 +1361,7 @@ line-height: normal
 .checkout-form,
 .details-section{
   flex: 1;
-  min-width: 300px; /* Ancho mínimo de las columnas para que no se vuelvan demasiado estrechas */
+  min-width: 300px; 
 }
 
 .checkout-form h2 {
@@ -1501,7 +1501,7 @@ line-height: normal;
   color: #EEE0B3;
   font-size: 20px;
   font-family: 'AvertaStd-Light';
-  margin-bottom: 5px;
+  margin-top: 10px;
   flex-grow: 0;
 
 }
@@ -1595,7 +1595,9 @@ line-height: normal;
   margin-bottom: 10px; 
   margin-left: 30px;
 }
-
+.details-mobile{
+  display: none;
+}
 .details-section .order-summary h3 {
   font-weight: bold; 
 }
@@ -1604,7 +1606,7 @@ line-height: normal;
   font-weight: bold; 
 }
 
-.details-section .order-summary h3 {
+.details-section  .total-pago {
   color: #020101;
   font-family: 'AvertaStd-Bold';
   font-size: 20px;
@@ -1614,32 +1616,57 @@ line-height: normal;
   margin-top: 0px;
   text-align: end;
   margin-right: 20px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 
 }
+.order-summary {
+  position: relative; 
+  padding: 20px 0; 
+
+}
+.order-summary::before,
+.order-summary::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  height: 1px; 
+
+  background: linear-gradient(to right, #000 0%, #ffda5f 50%, #404040 100%); 
+}
+
+.order-summary::before {
+  top: 0;
+}
+
+.order-summary::after {
+  bottom: 0; 
+}
+
 /* ITEMS QUE LUEGO VAN A ASER DINAMICOS */
 .item-container {
   display: flex;
   align-items: center;
   background-color: transparent; 
-
-margin-top: -30px; 
+  margin-top: -30px; 
  
 }
 
 .item-image img {
-  width: 300px; 
+  width: 100%; 
   height: auto;
-  min-width: 200px;
-  margin-top:-30px;
- 
+  min-width: 250px;
+  margin: auto;
+  display: block; 
+
 }
 
 .item-details {
-  flex-grow: 1;
 padding-left: 30px;
 margin-top: 30px;
 margin-bottom: 20px;
+margin-right: 10px;
 }
 
 .item-details h3 {
@@ -1678,37 +1705,87 @@ margin-bottom: 20px;
 }
 
 .item-details .quantity {
-  color: #020101; /* Quantity text color */
+  color: #020101; 
   font-weight:400; 
   font-family: 'AvertaStd-Light';
 }
 
+/* BOTON ENVIAR WHATS */
 
 
+.button-container {
+  display: flex;
+  justify-content: flex-end; 
+  margin-top: 10px; 
+  margin-right: 35px;
+}
 
-/* Para manejar la responsividad, puedes usar media queries para ajustar los estilos en pantallas más pequeñas */
+.whatsapp-button {
+  background-color: #E8AB35; 
+  color: #020101;
+  border: none;
+  padding: 6px 20px; 
+  border-radius: 2px; 
+  font-size: 15px; 
+  font-family: 'AvertaStd-Bold';
+  font-weight: bold;
+  cursor: pointer; 
+ 
+  transition: background-color 0.3s ease; 
+}
+
+.whatsapp-button:hover {
+  background: #D1C1A1; 
+  color: black; 
+  cursor: pointer; }
+
+  .title-mobile {
+    display: none;
+  }
+
 @media (max-width: 768px) {
+  .title-desktop {
+    display: none;
+  }
+  .title-mobile {
+    display: block;
+  text-align:  center;
+  }
 
   .details-section {
-    width: auto; /* Auto-ajuste de ancho en móviles */
+    width: 100%; 
+    min-width: none;
   }
 
   .checkout-form,
   .details-section {
     flex-basis: 100%;
   }
+  .details-mobile{
+    
+    color: #020101; 
+    font-family:'AvertaStd-Bold';
+    font-weight: 700;
+    margin-bottom: 22px; 
+    background-color: #E2C773;
+    padding: 15px;
+  }
 
+  .checkout-form {
+    order: 2; /* Ordena segundo el formulario */
+}
 
+.details-section {
+    order: 1; /* Ordena primero la sección de detalles */
+}
 
 
   .checkout-section {
     width: 100%;
     padding: 10px;
-  }
-  .checkout-section {
-    padding: 20px;
+  
     margin-left: 0px;
-   
+    flex-direction: column;
     
   } 
   .checkout-form h2 {
@@ -1774,6 +1851,39 @@ margin-bottom: 20px;
   .form-group .input-coments{
     margin-top: 20px;
    font-size: 16px !important;
+    }
+  .button-container {
+    justify-content: center; 
+    margin-right: 0;
   }
+
+.item-container{
+flex-direction: column ;
+margin-top: 0;
+align-items: start;
 }
+
+
+
+.item-image img {
+  width: 100%; 
+  height: auto;
+  max-width: 350px;
+  margin: auto;
+  display: block;
+
+}
+
+.item-details {
+  margin-bottom: 30px;
+  width: 100%;
+  padding-left: 0;
+}
+.details-section .total-pago{
+text-align: center;
+margin-right: 0;
+}
+
+}
+
 
