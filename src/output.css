@@ -3883,6 +3883,12 @@ input:focus, textarea:focus {
   }
 }
 
+@media screen and (max-height: 600px) {
+  .swiper-pagination  {
+    display: none;
+  }
+}
+
 .hover\:border-2:hover {
   border-width: 2px;
 }
@@ -4078,5 +4084,3 @@ input:focus, textarea:focus {
     line-height: 1.75rem;
   }
 }
-
-

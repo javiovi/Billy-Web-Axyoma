@@ -1887,3 +1887,8 @@ margin-right: 0;
 }
 
 
+@media screen and (max-height: 600px) {
+  .swiper-pagination  {
+    display: none; 
+  }
+}
