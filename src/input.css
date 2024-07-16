@@ -4,16 +4,16 @@
 
 
 
+
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Asegúrate que la barra de navegación esté sobre otros elementos */
+  z-index: 1000;
 }
 .nav-height {
-    height: 100px; /* Esta es la altura específica que puedes controlar */
-  }
+    height: 100px; }
 
   .nav-link {
     color: #F1E4B2;

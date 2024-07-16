@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/icons/iso.svg" type="image/png">
-    <script src="https://c.webfontfree.com/c.js?f=Averta-Bold" type="text/javascript"></script>
+    <script src="https://c.webfontfree.com/c.js?f=Averta-Bold" type="text/javascript" rel="preload"></script>
     <link href="https://db.onlinewebfonts.com/a/SHGt87Zn" rel="stylesheet" type="text/css"/>
     <link href="https://db.onlinewebfonts.com/c/b5d2107c7c6e775b13169eb51d8970c1?family=AvertaStd-Light" rel="stylesheet" type="text/css"/>
     <link href="https://db.onlinewebfonts.com/c/efc5d27fcf85239bbfee077b689e3ac9?family=Averta+ExtraBold" rel="stylesheet" type="text/css"/>
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-    <link href="./src/output.css" rel="stylesheet">
+    <link href="src/output.css" rel="stylesheet">
 
 
 
@@ -55,12 +55,12 @@
 </div>
 
 
-        <div class="flex items-center space-x-2 md:ml-6 ">
+        <div class="hidden md:flex  items-center space-x-2">
           <a href="https://www.instagram.com/billylomito/" target="_blank" class="w-8 h-8">
-          <img src="./src/icons/ins.svg" alt="Instagram" class="h-8 w-8 hidden md:block">
+          <img src="./src/icons/ins.svg" alt="Instagram" class="h-8 w-8 md:block hidden">
           </a>
           <a href="https://www.tiktok.com/@billy.lomito" target="_blank" class="w-8 h-8 ml-4"> 
-        <img src="./src/icons/tik.svg" alt="TikTok" class="h-8 w-8 hidden md:block"></a>
+        <img src="./src/icons/tik.svg" alt="TikTok" class="h-8 w-8 md:block hidden"></a>
         </div>
       
         <!-- Enlaces a la izquierda y derecha del logo, espaciados en escritorio -->
@@ -69,8 +69,8 @@
           <a href="#locales" class="nav-link text-sm hidden md:block mx-5">LOCALES</a>
      
           <!-- Logo en el centro -->
-          <a href="./index.html">
-          <img src="./src/img/logonav.svg" alt="BILLY LOMITO" class="h-8 mx-10 logo-nav" style="height: 50px; width: auto;">
+          <a href="./index.html" class="mx-auto md:mx-0">
+          <img src="./src/img/logonav.svg" alt="BILLY LOMITO" class="h-8  mx-10 logo-nav" style="height: 50px; width: auto;">
           </a>
           <a href="#contacto" class="nav-link text-sm hidden md:block mx-5">CONTACTO</a>
           <a href="#pedido" class="nav-link text-sm hidden md:block mx-5">HACÉ TU PEDIDO</a>
