@@ -10,10 +10,22 @@
     <link href="https://db.onlinewebfonts.com/c/efc5d27fcf85239bbfee077b689e3ac9?family=Averta+ExtraBold" rel="stylesheet" type="text/css"/>
     <link href="https://db.onlinewebfonts.com/c/447315c0c330fd423c8e1cc18024669d?family=AvertaStd-Bold" rel="stylesheet" type="text/css"/>
     <link href="https://db.onlinewebfonts.com/c/150037e11f159dca84bc4c04549094b6?family=Averta-Regular" rel="stylesheet" type="text/css"/>
+   
+
     <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Billy Lomito" />
+    <meta property="og:description" content="Sabor que marca la diferencia" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Billy Lomito" />
+    <meta property="og:locale" content="es_ES" />
+    <link href="src/output.css" rel="stylesheet">
     <link href="./src/output.css" rel="stylesheet">
 
 
@@ -116,31 +128,43 @@
             
               <input type="email" id="email" placeholder="Email">
             </div>
-            
+
             <div class="form-group">
-              <label for="pickup">Retirá el pedido en nuestro local</label>
-              <div class="checkbox-wrapper">
-                <input type="checkbox"  class="custom-checkbox-b">
-                <span class="checkbox-label">Laprida 796, Rosario</span>
-              </div>
-            </div>
             
-            <div class="form-group">
-              <label for="home-delivery">¿Lo querés comer en tu casa?</label>
-              <div class="checkbox-wrapper">
-                <input type="checkbox"  name="delivery"class="custom-checkbox-b">
-                <input type="text" id="address" placeholder="Dirección de calle y número" class="address-input">
-              </div>
+              <input type="phone" id="phone" placeholder="Dejanos tu WhatsApp">
             </div>
-            
+
+
+           <div class="form-group">
+    <div class="label-container">
+        <label for="pickup" class="expandable-label">Retirá el pedido en nuestro local</label>
+        <img src="./src/icons/flechamenu.svg" alt="Arrow Icon" class="arrow-icon-two" onclick="toggleVisibility('pickup-info'); updateSummary('local');">
+    </div>
+    <div class="checkbox-wrapper" id="pickup-info" style="display: none;">
+        <input type="checkbox" id="pickup" class="custom-checkbox-b">
+        <span class="checkbox-label">Laprida 796, Rosario</span>
+    </div>
+</div>
+
+<div class="form-group">
+  <div class="label-container">
+      <label for="home-delivery" class="expandable-label">¿Lo querés comer en tu casa?</label>
+      <img src="./src/icons/flechamenu.svg" alt="Arrow Icon" class="arrow-icon-two" onclick="toggleVisibility('delivery-info')">
+  </div>
+  <div class="checkbox-wrapper" id="delivery-info" style="display: none;">
+      <input type="checkbox" name="delivery" class="custom-checkbox-b" id="home-delivery " onclick="updateSummary('delivery')">
+      <input type="text" id="delivery-address" placeholder="Dirección de calle y número" class="address-input">
+  </div>
+</div>
+
             
             <div class="form-group">
               <div class="select-wrapper">
                 <img src="./src/img/tarjetas.svg" alt="Payment Icon" class="payment-icon"/>
-                <select id="payment-method" class="payment-select">
+                <select id="payment-method" class="payment-select" onchange="updatePaymentMethod()">
                   <option value="" disabled selected>Seleccioná tu método de pago</option>
-                  <option value="cash">En efectivo</option>
-                  <option value="card">Tarjeta</option>
+                  <option value="cash" class="option-style">En efectivo</option>
+                  <option value="card" class="option-style">Tarjeta</option>
                 </select>
                 <img src="./src/icons/flechamenu.svg" alt="Arrow Icon" class="arrow-icon"/>
               </div>
@@ -149,8 +173,10 @@
             
             <div class="form-group">
               <input type="text" id="comments" placeholder="¿Querés aclararnos algún detalle en tu pedido?" class="input-coments"></textarea>
-            </div>
           
+            </div>
+               
+        
           </form>
         </div>
 
@@ -197,8 +223,9 @@
               </div>
           </div>
           <div class="order-summary">
-            <p>Retiro del pedido: A domicilio (Córdoba 2535, Rosario)<span>  +$750.- por envío </span></p>
-            <p>Método de pago: <span>En efectivo</span></p>
+            <p id="delivery-summary">Entrega del pedido:</p>
+            <p id="payment-method-summary">Método de pago: <span id="payment-type">No seleccionado</span></p>
+
            
           </div>
           <h3 class="total-pago">Total de pago:      <span>$13,150.-</span></h3>
@@ -243,7 +270,7 @@
         <p class="p-footer text-center">COPYRIGHT 2024 <br> TODOS LOS DERECHOS RESERVADOS</p>
       </div> 
       <div>
-        <p class="p-footer">DISEÑO Y DESARROLLO BY AXYOMAGLOBAL</p>
+        <p class="p-footer">DISEÑO Y DESARROLLO BY <a href="https://axyoma.com.ar/" target="_blank">AXYOMAGLOBAL </a></p>
       </div>
     </div>
   </div>
@@ -251,8 +278,56 @@
 
 
 
+
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+
 <script>
+//FUNCIONES SELECTS DIRECCION Y MEDIO DE PAGO : 
+function toggleVisibility(id) {
+    var element = document.getElementById(id);
+    element.style.display = (element.style.display == 'block') ? 'none' : 'block';
+}
+
+function updateSummary(method) {
+    var summaryText = document.getElementById('delivery-summary');
+    if (method === 'local') {
+        summaryText.innerHTML = 'Entrega del pedido: Retiro por local - Laprida 796, Rosario';
+    } else if (method === 'delivery') {
+        var address = document.getElementById('delivery-address').value;
+        if (address) {
+            summaryText.innerHTML = `Entrega del pedido: A domicilio (${address}) <span>+$750.- por envío</span>`;
+        } else {
+            summaryText.innerHTML = 'Entrega del pedido: A domicilio (Dirección no especificada) <span>+$750.- por envío</span>';
+        }
+    }
+}
+
+
+function updatePaymentMethod() {
+    var select = document.getElementById('payment-method');
+    var paymentType = document.getElementById('payment-type');
+    var selectedValue = select.options[select.selectedIndex].value;
+
+    switch (selectedValue) {
+        case 'cash':
+            paymentType.textContent = 'En efectivo';
+            break;
+        case 'card':
+            paymentType.textContent = 'Tarjeta';
+            break;
+        default:
+            paymentType.textContent = 'No seleccionado';
+            break;
+    }
+}
+
+
+
+
 // Selecciona todos los botones de acordeón en el documento
 document.querySelectorAll('.accordion-header').forEach(header => {
   header.addEventListener('click', function() {
@@ -269,6 +344,16 @@ document.querySelectorAll('.accordion-header').forEach(header => {
     icon.classList.toggle('rotate-180'); 
   });
 });
+
+// Selects desplegables envios 
+function toggleVisibility(elementId) {
+    var element = document.getElementById(elementId);
+    if (element.style.display === 'none') {
+        element.style.display = 'flex';
+    } else {
+        element.style.display = 'none';
+    }
+}
 </script>
 
 <script>

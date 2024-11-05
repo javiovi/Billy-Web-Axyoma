@@ -16,7 +16,14 @@
   />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Billy Lomito" />
+    <meta property="og:description" content="Sabor que marca la diferencia" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Billy Lomito" />
+    <meta property="og:locale" content="es_ES" />
     <link href="src/output.css" rel="stylesheet">
 
 
@@ -106,7 +113,15 @@
 
       </nav>
         
-       
+      <div id="preloader">
+        <img src="./favicon.svg" alt="First Image" id="preloader-img"> 
+        <div class="loading-bar-container">
+          <div class="loading-bar" id="loadingBar"></div>
+        </div>
+      </div>
+
+
+
      <!-- Swiper -->
 <div class="swiper-container overflow-x-hidden mt-20">
   
@@ -185,7 +200,7 @@
 
 <div data-aos="fade-up">
 <!-- Contenedor para los productos -->
-<div id="additional-products-container" class="additional grid grid-cols-1 md:grid-cols-3 gap-4 sm:px-20 px-0">
+<div id="additional-products-container" class="additional grid grid-cols-1 md:grid-cols-3 gap-4 sm:px-0 px-0">
 
 </div>
 </div>
@@ -289,7 +304,9 @@
         <h2 class="text-2xl font-bold mb-4 franquicias-titulo-inf">¡UNITE A NUESTRA<span class="titulo-color"> COMUNIDAD!</span></h2>
         <p class="mb-4 franquicias-texto-inf">Cada semana explora un sinfín de sabores nuevos en<br>nuestras hamburguesas, lomos y mucho más!<br>Seguinos y compartí tu momento Billy. 
         </p>
+        <a  href="https://www.instagram.com/billylomito/?hl=es" target="_blank">
         <button class="bg-black text-white py-2 px-4 btn-conoce mt-4 mb-10">Conocer más</button>
+        </a>
       </div>
     </div>
     </div>
@@ -360,7 +377,7 @@
       </div>
     
       <div>
-        <p class="p-footer">DISEÑO Y DESARROLLO BY AXYOMAGLOBAL</p>
+        <p class="p-footer">DISEÑO Y DESARROLLO BY <a href="https://axyoma.com.ar/" target="_blank">AXYOMAGLOBAL </a></p>
       </div>
     </div>
   </div>
@@ -439,6 +456,32 @@ window.addEventListener('resize', initializeLocaleEvents);
 </script>
 
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script>
+ 
+  window.addEventListener('load', function() {
+    console.log('La página está completamente cargada.');
+    
+    
+    var loadingBar = document.getElementById('loadingBar');
+
+   
+    loadingBar.style.width = '100%'; 
+
+    // Define el preloader
+    var preloader = document.getElementById('preloader');
+
+   
+    setTimeout(function() {
+        
+        if(preloader && loadingBar) {
+            preloader.classList.add('hide-preloader');
+            console.log('El preloader debe estar oculto ahora.');
+        }
+    }, 3000); 
+});
+
+ 
+   </script>
    <script>
       //Swipper banners principales
         var swiper = new Swiper('.swiper-container', {

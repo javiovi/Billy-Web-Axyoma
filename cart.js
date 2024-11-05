@@ -40,8 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="text-lg font-bold product-price">$${product.price}.-</div>
               <div class="text-sm product-previous-price">$${product.previousPrice}.-</div>
             </div>
+             <a href="interna.html?id=${product.id}"  class="block"> 
             <button class="mt-2 agregar-btn">Agregar al pedido</button>
-        
+            </a>
           </div>
         </div>
       `;
@@ -70,9 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         </a>
         <p class="text-sm mb-4 product-description1">${product.description}</p>
       </div>
-      <div class="flex justify-between items-center">
+      <div class="flex justify-center items-center">
         <div class="text-lg font-bold product-price1 ml-10">$${product.price}</div>
+        
+   
         <button class="agregar-boton">Agregar al pedido</button>
+       
       </div>
     </div>
    
@@ -145,7 +149,7 @@ document.getElementById('cart-modal').addEventListener('click', function(event) 
 document.getElementById('continue-button').addEventListener('click', function() {
   document.getElementById('cart-modal').classList.remove('active');
   
-   window.location.href = './compra.html';
+   window.location.href = './interna.html';
 });
 
 // Limpiar el carrito
@@ -218,7 +222,7 @@ function updateCartModal() {
       <p class="text-sm mb-4 cart-item-description">${product.description}</p>
       <div class="cart-item-quantity">
        
-        <input type="text" class="quantity-input" value="${product.quantity}" />
+        <input type="number" class="quantity-input" value="${product.quantity}"min="1" />
         <span class="quantity-label">Cantidad</span>  
         <button class="cart-item-remove" onclick="removeFromCart(${product.id})">
         <img src="./src/icons/basurero.svg" alt="Eliminar" class="remove-icon"/>

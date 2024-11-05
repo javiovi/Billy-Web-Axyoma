@@ -65,7 +65,7 @@ function initializeMobileCarousel() {
           <h3 class="text-lg font-semibold mb-2 product-n1">${product.name}</h3>
           </a>
           <p class="text-sm mb-4 product-description1">${product.description}</p>
-          <div class="flex justify-between items-center">
+          <div class="flex justify-center items-center">
             <div class="text-lg font-bold product-price1 ml-10 mr-2 md:ml-10">$${product.price}</div>
             <button class="agregar-boton">Agregar al pedido</button>
           </div>
